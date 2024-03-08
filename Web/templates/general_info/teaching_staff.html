@@ -1,0 +1,799 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block style %}
+.general-info-header{
+height: 300px;
+width: 98%;
+background-image: linear-gradient(to top, #064B7B , #0098D7);
+margin-top: 8px;
+border-radius: 10px;
+}
+.general-info-header .waves_img{
+    height: auto;
+    width: 100%;
+    position: relative;
+    transform: translateY(2rem);
+
+}
+@media screen and (max-width: 770px){
+    .general-info-header .waves_img{
+    height: auto;
+    width: 100%;
+    position: relative;
+    transform: translateY(1rem);
+} 
+}
+
+
+.banner-btn a{
+    border-radius: 8px;
+	width: 170px;
+	text-decoration: none;
+	display: inline-block;
+	margin: 0 10px;
+	padding: 12px 0;
+	color: #0098D7;
+    background-color: rgb(255, 255, 255);
+	border: 1px solid rgb(255, 255, 255);
+	position: relative;
+	z-index: 1;
+	transition: color 0.5s;
+	margin-top: 10px;
+    font-weight: bold;
+}
+
+.banner-btn a span{
+width: 0%;
+height: 100%;
+position: absolute;
+top: 0;
+left: 0;
+background: linear-gradient(to right, #064B7B , #0098D7);
+z-index: -1;
+transition: 0.5s;
+}
+.banner-btn a:hover span{
+    border-radius: 8px;
+	width: 100%
+}
+.banner-btn a:hover{
+	color:rgb(255, 255, 255);
+}
+
+
+
+.,
+.btn-sm-square,
+.btn-lg-square {
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-box {
+  width: 90px;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 90px;
+}
+
+.back-to-top {
+  position: fixed;
+  display: none;
+  right: 15px;
+  bottom: 15px;
+  z-index: 11;
+}
+
+{% comment %} .navbar-light .navbar-nav .nav-link {
+  padding: 30px 15px;
+  color: red;
+  font-size: 17px;
+  font-weight: 500;
+  font-family: 'Roboto', sans-serif;
+  outline: none;
+} {% endcomment %}
+
+.navbar-light .navbar-nav .nav-link:hover,
+.navbar-light .navbar-nav .nav-link.active {
+  color: #B49C73;
+}
+
+@media (max-width: 991.98px) {
+  .navbar-light .navbar-nav .nav-link {
+    padding: 5px 0;
+  }
+}
+
+.carousel-caption {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(55, 55, 63, 0.7);
+  z-index: 1;
+}
+
+@media (min-width: 992px) {
+  .feature-text {
+    margin-left: -100px;
+  }
+}
+
+.bg-page-header {
+  background: linear-gradient(rgba(55, 55, 63, 0.7), rgba(55, 55, 63, 0.7)), url(../img/carousel-2.jpg), no-repeat center center;
+  background-size: cover;
+}
+
+.bg-appointment {
+  background: linear-gradient(rgba(55, 55, 63, 0.7), rgba(55, 55, 63, 0.7)), url(../img/carousel-1.jpg), no-repeat center center;
+  background-size: cover;
+}
+
+.bg-action {
+  background: linear-gradient(rgba(55, 55, 63, 0.7), rgba(55, 55, 63, 0.7)), url(../img/carousel-2.jpg), no-repeat center center;
+  background-size: cover;
+}
+
+.owl-carousel .owl-nav {
+  position: absolute;
+  width: 100px;
+  height: 40px;
+  top: -70px;
+  left: calc(50% - 50px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.owl-carousel .owl-nav .owl-prev,
+.owl-carousel .owl-nav .owl-next {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #B49C73;
+  background: #37373F;
+  border-radius: 5px;
+  font-size: 22px;
+}
+
+.team-img .team-social {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(55, 55, 63, 0.7);
+  transition: .5s;
+  z-index: 1;
+  opacity: 0;
+}
+
+.team-item:hover .team-social {
+  opacity: 1;
+}
+
+.testimonial-text::after {
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 0;
+  bottom: -24px;
+  left: 28px;
+  border: 12px solid;
+  border-color: #37373F transparent transparent transparent;
+  z-index: 1;
+}
+
+.testimonial-carousel .owl-dots {
+  position: absolute;
+  width: 100%;
+  top: -50px;
+  text-align: center;
+}
+
+.testimonial-carousel .owl-dot {
+  position: relative;
+  display: inline-block;
+  margin: 0 8px;
+  width: 15px;
+  height: 15px;
+  border-radius: 15px;
+  background: #B49C73;
+}
+
+.testimonial-carousel .owl-dot::after {
+  position: absolute;
+  content: "";
+  top: -5px;
+  right: -5px;
+  bottom: -5px;
+  left: -5px;
+  border: 2px solid #B49C73;
+  border-radius: 20px;
+}
+
+.testimonial-carousel .owl-dot.active {
+  background: #343a40;
+}
+
+.contact-form .help-block ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.container-1{
+  box-shadow:0px 0px 10px black;
+  border-radius:5px;
+}
+{% endblock style %}
+
+
+
+{% block body_content %}
+    <!-- About Header Buttons Start -->
+    <center> <div class="general-info-header">
+        <div class="banner-btn">
+            <a href="#"  style="margin-top: -28px; color: white; background: linear-gradient(to right, #064B7B , #0098D7);" data-aos="fade-down" data-aos-delay="150" data-aos-duration="1000"> <span></span> Teaching Staff &nbsp;&nbsp;</a>
+            <a href="{% url 'school_times' %}" data-aos="fade-down" data-aos-delay="50" data-aos-duration="1000"> <span></span>School Times &nbsp;&nbsp;</a>
+            <a href="{% url 'important_days' %}"  data-aos="fade-down" data-aos-delay="250" data-aos-duration="1000"> <span></span>Important Days &nbsp;&nbsp;</a>
+            <a href="{% url 'calender' %}"  data-aos="fade-down" data-aos-delay="150" data-aos-duration="1000"> <span></span>Calender &nbsp;&nbsp;</a><br>
+            <a href="{% url 'uniform' %}"  data-aos="fade-down" data-aos-delay="200" data-aos-duration="1000"> <span></span>Uniform &nbsp;&nbsp;</a>
+            <a href="{% url 'rules' %}" data-aos="fade-down" data-aos-delay="300" data-aos-duration="1000"> <span></span>Rules&nbsp;&nbsp;</a>
+            <a href="{% url 'parents_meet' %}" data-aos="fade-down" data-aos-delay="350" data-aos-duration="1000"> <span></span>Parents Meet&nbsp;&nbsp;</a>
+            <a href="{% url 'parents_consent_form' %}" data-aos="fade-down" data-aos-delay="200" data-aos-duration="1000"> <span></span>Parents Consent&nbsp;&nbsp;</a>
+        </div>
+     <img src="{% static 'img/waves.png' %}" alt="" class="waves_img">
+    </div>
+</center> 
+    <!-- About Header Buttons Stop -->
+
+<br>
+
+
+
+    <!-- Team Start -->
+    <div class="container-fluid py-5">
+      <div class="container py-5 container-1">
+          <div class="text-center pb-2">
+              <h6 class="text-uppercase">Our Staff</h6>
+              <h1 class="mb-4">Meet Our Leader's</h1>
+          </div>
+          <div class="row">
+              <div class="col-12">
+                  <div class="rounded" style="height: 200px; background-color: #007bff;"></div>
+                  <div class="owl-carousel team-carousel position-relative" style="margin-top: -97px; padding: 0 30px;">
+                     
+                    
+                      <div class="team-item text-center bg-white rounded overflow-hidden "><br>
+                        <h5 class="mb-2 px-4">Dayanand Chawale</h5>
+                        {% comment %} <p class="mb-3 px-0">Subject Name</p> {% endcomment %}
+                        <p class="mb-3 px-0" style="padding-bottom: 15px;">Vice Principal</p>
+                        <div class="team-img position-relative">
+                            <img class="img-fluid" src="{% static 'img/TeacherProfilePicture/chawale.jpg' %}" alt="">
+                            <div class="team-social">
+                                <a class="btn btn-outline-light mx-1" href="#">more <i class="bi bi-three-dots"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                                       
+                    
+                    <div class="team-item text-center bg-white rounded overflow-hidden "><br>
+                      <h5 class="mb-2 px-4">Nagesh Isapure</h5>
+                      {% comment %} <p class="mb-3 px-0">Subject Name</p> {% endcomment %}
+                      <p class="mb-3 px-0" style="padding-bottom: 15px;">Head Co-Ordinator</p>
+                      <div class="team-img position-relative">
+                          <img class="img-fluid" src="{% static 'img/TeacherProfilePicture/isapure.jpg' %}" alt="">
+                          <div class="team-social">
+                              <a class="btn btn-outline-light  mx-1" href="#">more <i class="bi bi-three-dots"></i></a>
+                          </div>
+                      </div>
+                  </div>
+
+                                       
+                    
+                  <div class="team-item text-center bg-white rounded overflow-hidden "><br>
+                    <h5 class="mb-2 px-4">Ekta Singh Rajput</h5>
+                    {% comment %} <p class="mb-3 px-0">Subject Name</p> {% endcomment %}
+                    <p class="mb-3 px-0" style="padding-bottom: 15px;">Co-Ordinator</p>
+                    <div class="team-img position-relative">
+                        <img class="img-fluid" src="{% static 'img/TeacherProfilePicture/rajput.jpg' %}" alt="">
+                        <div class="team-social">
+                            <a class="btn btn-outline-light  mx-1" href="#">more <i class="bi bi-three-dots"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                                       
+                    
+                <div class="team-item text-center bg-white rounded overflow-hidden "><br>
+                  <h5 class="mb-2 px-4">Geeta Jagtap</h5>
+                  {% comment %} <p class="mb-3 px-0">Subject Name</p> {% endcomment %}
+                  <p class="mb-3 px-0" style="padding-bottom: 15px;">Co-Ordinator</p>
+                  <div class="team-img position-relative">
+                      <img class="img-fluid" src="{% static 'img/TeacherProfilePicture/jagtap.jpg' %}" alt="">
+                      <div class="team-social">
+                          <a class="btn btn-outline-light  mx-1" href="#">more <i class="bi bi-three-dots"></i></a>
+                      </div>
+                  </div>
+              </div>
+
+                                       
+                    
+              <div class="team-item text-center bg-white rounded overflow-hidden "><br>
+                <h5 class="mb-2 px-4">Vikas Karankal</h5>
+                {% comment %} <p class="mb-3 px-0">Subject Name</p> {% endcomment %}
+                <p class="mb-3 px-0" style="padding-bottom: 15px;">Co-Ordinator</p>
+                <div class="team-img position-relative">
+                    <img class="img-fluid" src="{% static 'img/TeacherProfilePicture/karankal.jpg' %}" alt="">
+                    <div class="team-social">
+                        <a class="btn btn-outline-light  mx-1" href="#">more <i class="bi bi-three-dots"></i></a>
+                    </div>
+                </div>
+            </div>
+
+                               
+                    
+            <div class="team-item text-center bg-white rounded overflow-hidden "><br>
+              <h5 class="mb-2 px-4">Santosh Awchar</h5>
+              {% comment %} <p class="mb-3 px-0">Subject Name</p> {% endcomment %}
+              <p class="mb-3 px-0" style="padding-bottom: 15px;">P.R.O</p>
+              <div class="team-img position-relative">
+                  <img class="img-fluid" src="{% static 'img/TeacherProfilePicture/awchar.jpg' %}" alt="">
+                  <div class="team-social">
+                      <a class="btn btn-outline-light  mx-1" href="#">more <i class="bi bi-three-dots"></i></a>
+                  </div>
+              </div>
+          </div>
+
+      
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  <!-- Team End -->
+
+
+
+
+    <!-- Team Start -->
+    <div class="container-fluid py-1">
+      <div class="container py-1  container-1">
+          <div class="text-center pb-2">
+              <h6 class="text-uppercase">Our Staff</h6>
+              <h1 class="mb-4">Meet Our HOD</h1>
+          </div>
+          <div class="row">
+              <div class="col-12">
+                  <div class="rounded" style="height: 200px; background-color: #007bff;"></div>
+                  <div class="owl-carousel team-carousel position-relative" style="margin-top: -97px; padding: 0 30px;">
+                                           
+                    
+                    <div class="team-item text-center bg-white rounded overflow-hidden "><br>
+                      <h5 class="mb-2 px-4">Birat B Nayak</h5>
+                      <p class="mb-3 px-0">English</p>
+                      <p class="mb-3 px-0" style="padding-bottom: 15px;">HOD</p>
+                      <div class="team-img position-relative">
+                          <img class="img-fluid" src="{% static 'img/TeacherProfilePicture/Nayak.jpg' %}" alt="">
+                          <div class="team-social">
+                              <a class="btn btn-outline-light  mx-1" href="#">more <i class="bi bi-three-dots"></i></a>
+                          </div>
+                      </div>
+                    </div>
+
+                                                         
+                    
+                    <div class="team-item text-center bg-white rounded overflow-hidden "><br>
+                      <h5 class="mb-2 px-4">Yogesh Sodnar</h5>
+                      <p class="mb-3 px-0">Math</p>
+                      <p class="mb-3 px-0" style="padding-bottom: 15px;">HOD </p>
+                      <div class="team-img position-relative">
+                          <img class="img-fluid" src="{% static 'img/TeacherProfilePicture/Sodnar.jpg' %}" alt="">
+                          <div class="team-social">
+                              <a class="btn btn-outline-light  mx-1" href="#">more <i class="bi bi-three-dots"></i></a>
+                          </div>
+                      </div>
+                    </div>
+
+                                                         
+                    
+                    <div class="team-item text-center bg-white rounded overflow-hidden "><br>
+                      <h5 class="mb-2 px-4">Sagar D Wagh</h5>
+                      <p class="mb-3 px-0">Physics</p>
+                      <p class="mb-3 px-0" style="padding-bottom: 15px;">HOD </p>
+                      <div class="team-img position-relative">
+                          <img class="img-fluid" src="{% static 'img/TeacherProfilePicture/Wagh.jpg' %}" alt="">
+                          <div class="team-social">
+                              <a class="btn btn-outline-light  mx-1" href="#">more <i class="bi bi-three-dots"></i></a>
+                          </div>
+                      </div>
+                    </div>
+
+                                                         
+                    
+                    <div class="team-item text-center bg-white rounded overflow-hidden "><br>
+                      <h5 class="mb-2 px-4">Vishal R Ighe</h5>
+                      <p class="mb-3 px-0">Chemistry</p>
+                      <p class="mb-3 px-0" style="padding-bottom: 15px;">HOD </p>
+                      <div class="team-img position-relative">
+                          <img class="img-fluid" src="{% static 'img/TeacherProfilePicture/Ighe.jpg' %}" alt="">
+                          <div class="team-social">
+                              <a class="btn btn-outline-light  mx-1" href="#">more <i class="bi bi-three-dots"></i></a>
+                          </div>
+                      </div>
+                    </div>
+
+                                              
+                    
+                    <div class="team-item text-center bg-white rounded overflow-hidden "><br>
+                      <h5 class="mb-2 px-4">Umesh D Tarak</h5>
+                      <p class="mb-3 px-0">IT</p>
+                      <p class="mb-3 px-0" style="padding-bottom: 15px;">HOD </p>
+                      <div class="team-img position-relative">
+                          <img class="img-fluid" src="{% static 'img/TeacherProfilePicture/Tarak.jpg' %}" alt="">
+                          <div class="team-social">
+                              <a class="btn btn-outline-light  mx-1" href="#">more <i class="bi bi-three-dots"></i></a>
+                          </div>
+                      </div>
+                    </div>
+
+                                                         
+                    
+                    <div class="team-item text-center bg-white rounded overflow-hidden "><br>
+                      <h5 class="mb-2 px-4">Datta Bobade</h5>
+                      <p class="mb-3 px-0">EVS</p>
+                      <p class="mb-3 px-0" style="padding-bottom: 15px;">HOD </p>
+                      <div class="team-img position-relative">
+                          <img class="img-fluid" src="{% static 'img/TeacherProfilePicture/Bobade.jpg' %}" alt="">
+                          <div class="team-social">
+                              <a class="btn btn-outline-light  mx-1" href="#">more <i class="bi bi-three-dots"></i></a>
+                          </div>
+                      </div>
+                    </div>
+
+                                                         
+                    
+                    <div class="team-item text-center bg-white rounded overflow-hidden "><br>
+                      <h5 class="mb-2 px-4">Imtiyaz Pandith</h5>
+                      <p class="mb-3 px-0">SST</p>
+                      <p class="mb-3 px-0" style="padding-bottom: 15px;">HOD </p>
+                      <div class="team-img position-relative">
+                          <img class="img-fluid" src="{% static 'img/TeacherProfilePicture/Pandith.jpg' %}" alt="">
+                          <div class="team-social">
+                              <a class="btn btn-outline-light  mx-1" href="#">more <i class="bi bi-three-dots"></i></a>
+                          </div>
+                      </div>
+                    </div>
+
+                                                         
+                    
+                    <div class="team-item text-center bg-white rounded overflow-hidden "><br>
+                      <h5 class="mb-2 px-4">Archana Raut</h5>
+                      <p class="mb-3 px-0">Marathi</p>
+                      <p class="mb-3 px-0" style="padding-bottom: 15px;">HOD </p>
+                      <div class="team-img position-relative">
+                          <img class="img-fluid" src="{% static 'img/TeacherProfilePicture/Raut.jpg' %}" alt="">
+                          <div class="team-social">
+                              <a class="btn btn-outline-light  mx-1" href="#">more <i class="bi bi-three-dots"></i></a>
+                          </div>
+                      </div>
+                    </div>
+
+                                                       
+                    
+                    <div class="team-item text-center bg-white rounded overflow-hidden "><br>
+                      <h5 class="mb-2 px-4">Pandurang Bhawal</h5>
+                      <p class="mb-3 px-0">ART</p>
+                      <p class="mb-3 px-0" style="padding-bottom: 15px;">HOD </p>
+                      <div class="team-img position-relative">
+                          <img class="img-fluid" src="{% static 'img/TeacherProfilePicture/Bhawal.jpg' %}" alt="">
+                          <div class="team-social">
+                              <a class="btn btn-outline-light  mx-1" href="#">more <i class="bi bi-three-dots"></i></a>
+                          </div>
+                      </div>
+                    </div>
+              
+                  </div>
+              </div>
+          </div>
+          <br><br>
+        </div>
+  </div>
+  <!-- Team End -->
+
+
+    <!-- Team Start -->
+    <div class="container-fluid py-5">
+      <div class="container py-5 container-1">
+          <div class="text-center pb-2">
+              <h6 class="text-uppercase">Our Staff</h6>
+              <h1 class="mb-4">Meet Our Teacher's</h1>
+          </div>
+          <div class="row">
+              <div class="col-12">
+                  <div class="rounded" style="height: 200px; background-color: #007bff;"></div>
+                  <div class="owl-carousel team-carousel position-relative" style="margin-top: -97px; padding: 0 30px;">
+                      
+
+                      <div class="team-item text-center bg-white rounded overflow-hidden "><br>
+                          <h5 class="mb-2 px-4">Yogita Birdwade</h5>
+                          <p class="mb-3 px-0">Marathi</p>
+                          <p class="mb-3 px-0" style="padding-bottom: 15px;">Teacher</p>
+                          <div class="team-img position-relative">
+                              <img class="img-fluid" src="{% static 'img/TeacherProfilePicture/birdwade.jpg' %}" alt="">
+                              <div class="team-social">
+                                  <a class="btn btn-outline-light  mx-1" href="#">more <i class="bi bi-three-dots"></i></a>
+                              </div>
+                          </div>
+                      </div>
+
+                      
+
+                      <div class="team-item text-center bg-white rounded overflow-hidden "><br>
+                        <h5 class="mb-2 px-4">Dipali Nikaj</h5>
+                        <p class="mb-3 px-0">Math/G.K</p>
+                        <p class="mb-3 px-0" style="padding-bottom: 15px;">Teacher</p>
+                        <div class="team-img position-relative">
+                            <img class="img-fluid" src="{% static 'img/TeacherProfilePicture/Nikaj.jpg' %}" alt="">
+                            <div class="team-social">
+                                <a class="btn btn-outline-light  mx-1" href="#">more <i class="bi bi-three-dots"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                                            
+
+                    <div class="team-item text-center bg-white rounded overflow-hidden "><br>
+                      <h5 class="mb-2 px-4">Rushikesh Pund</h5>
+                      <p class="mb-3 px-0">Math</p>
+                      <p class="mb-3 px-0" style="padding-bottom: 15px;">Teacher</p>
+                      <div class="team-img position-relative">
+                          <img class="img-fluid" src="{% static 'img/TeacherProfilePicture/Pund.jpg' %}" alt="">
+                          <div class="team-social">
+                              <a class="btn btn-outline-light  mx-1" href="#">more <i class="bi bi-three-dots"></i></a>
+                          </div>
+                      </div>
+                  </div>
+
+                                            
+
+                      <div class="team-item text-center bg-white rounded overflow-hidden "><br>
+                          <h5 class="mb-2 px-4">Dattatray Jadhav</h5>
+                          <p class="mb-3 px-0">English</p>
+                          <p class="mb-3 px-0" style="padding-bottom: 15px;">Teacher</p>
+                          <div class="team-img position-relative">
+                              <img class="img-fluid" src="{% static 'img/TeacherProfilePicture/Jadhav.jpg' %}" alt="">
+                              <div class="team-social">
+                                  <a class="btn btn-outline-light  mx-1" href="#">more <i class="bi bi-three-dots"></i></a>
+                              </div>
+                          </div>
+                      </div>
+
+                                            
+
+                      <div class="team-item text-center bg-white rounded overflow-hidden "><br>
+                          <h5 class="mb-2 px-4">Rameshwar Pawar</h5>
+                          <p class="mb-3 px-0">IT/CS</p>
+                          <p class="mb-3 px-0" style="padding-bottom: 15px;">Teacher</p>
+                          <div class="team-img position-relative">
+                              <img class="img-fluid" src="{% static 'img/TeacherProfilePicture/Pawar.jpg' %}" alt="">
+                              <div class="team-social">
+                                  <a class="btn btn-outline-light  mx-1" href="#">more <i class="bi bi-three-dots"></i></a>
+                              </div>
+                          </div>
+                      </div>
+
+                                            
+
+                      <div class="team-item text-center bg-white rounded overflow-hidden "><br>
+                          <h5 class="mb-2 px-4">Kapil Tak</h5>
+                          <p class="mb-3 px-0">SST</p>
+                          <p class="mb-3 px-0" style="padding-bottom: 15px;">Teacher</p>
+                          <div class="team-img position-relative">
+                              <img class="img-fluid" src="{% static 'img/TeacherProfilePicture/Tak.jpg' %}" alt="">
+                              <div class="team-social">
+                                  <a class="btn btn-outline-light  mx-1" href="#">more <i class="bi bi-three-dots"></i></a>
+                              </div>
+                          </div>
+                      </div>
+
+                                            
+
+                      <div class="team-item text-center bg-white rounded overflow-hidden "><br>
+                          <h5 class="mb-2 px-4">Bipin Yadav</h5>
+                          <p class="mb-3 px-0">Physics</p>
+                          <p class="mb-3 px-0" style="padding-bottom: 15px;">Teacher</p>
+                          <div class="team-img position-relative">
+                              <img class="img-fluid" src="{% static 'img/TeacherProfilePicture/Yadav.jpg' %}" alt="">
+                              <div class="team-social">
+                                  <a class="btn btn-outline-light  mx-1" href="#">more <i class="bi bi-three-dots"></i></a>
+                              </div>
+                          </div>
+                      </div>
+
+                                            
+
+                      <div class="team-item text-center bg-white rounded overflow-hidden "><br>
+                          <h5 class="mb-2 px-4">Pramod Dhambore</h5>
+                          <p class="mb-3 px-0">Math</p>
+                          <p class="mb-3 px-0" style="padding-bottom: 15px;">Teacher</p>
+                          <div class="team-img position-relative">
+                              <img class="img-fluid" src="{% static 'img/TeacherProfilePicture/Dhambore.jpg' %}" alt="">
+                              <div class="team-social">
+                                  <a class="btn btn-outline-light  mx-1" href="#">more <i class="bi bi-three-dots"></i></a>
+                              </div>
+                          </div>
+                      </div>
+
+                                            
+
+                      <div class="team-item text-center bg-white rounded overflow-hidden "><br>
+                          <h5 class="mb-2 px-4">Durga Jadhav</h5>
+                          <p class="mb-3 px-0">Marathi/G.K</p>
+                          <p class="mb-3 px-0" style="padding-bottom: 15px;">Teacher</p>
+                          <div class="team-img position-relative">
+                              <img class="img-fluid" src="{% static 'img/TeacherProfilePicture/Jadhav.jpg' %}" alt="">
+                              <div class="team-social">
+                                  <a class="btn btn-outline-light  mx-1" href="#">more <i class="bi bi-three-dots"></i></a>
+                              </div>
+                          </div>
+                      </div>
+
+                                            
+
+                      <div class="team-item text-center bg-white rounded overflow-hidden "><br>
+                          <h5 class="mb-2 px-4">Aparna Dharmadhikari</h5>
+                          <p class="mb-3 px-0">Hindi/Marathi</p>
+                          <p class="mb-3 px-0" style="padding-bottom: 15px;">Teacher</p>
+                          <div class="team-img position-relative">
+                              <img class="img-fluid" src="{% static 'img/TeacherProfilePicture/Dharmadhikari.jpg' %}" alt="">
+                              <div class="team-social">
+                                  <a class="btn btn-outline-light  mx-1" href="#">more <i class="bi bi-three-dots"></i></a>
+                              </div>
+                          </div>
+                      </div>
+
+                                            
+
+                      <div class="team-item text-center bg-white rounded overflow-hidden "><br>
+                          <h5 class="mb-2 px-4">Sangita Chawale</h5>
+                          <p class="mb-3 px-0">All Subjects</p>
+                          <p class="mb-3 px-0" style="padding-bottom: 15px;">Teacher</p>
+                          <div class="team-img position-relative">
+                              <img class="img-fluid" src="{% static 'img/TeacherProfilePicture/Sangita.jpg' %}" alt="">
+                              <div class="team-social">
+                                  <a class="btn btn-outline-light  mx-1" href="#">more <i class="bi bi-three-dots"></i></a>
+                              </div>
+                          </div>
+                      </div>
+
+                                            
+
+                      <div class="team-item text-center bg-white rounded overflow-hidden "><br>
+                          <h5 class="mb-2 px-4">Kiran Kharat</h5>
+                          <p class="mb-3 px-0">All Subjects</p>
+                          <p class="mb-3 px-0" style="padding-bottom: 15px;">Teacher</p>
+                          <div class="team-img position-relative">
+                              <img class="img-fluid" src="{% static 'img/TeacherProfilePicture/Kharat.jpg' %}" alt="">
+                              <div class="team-social">
+                                  <a class="btn btn-outline-light  mx-1" href="#">more <i class="bi bi-three-dots"></i></a>
+                              </div>
+                          </div>
+                      </div>
+
+                                            
+
+                      <div class="team-item text-center bg-white rounded overflow-hidden "><br>
+                          <h5 class="mb-2 px-4">Raju Shirsat</h5>
+                          <p class="mb-3 px-0">Hindi/Marathi</p>
+                          <p class="mb-3 px-0" style="padding-bottom: 15px;">Teacher</p>
+                          <div class="team-img position-relative">
+                              <img class="img-fluid" src="{% static 'img/TeacherProfilePicture/Shirsat.jpg' %}" alt="">
+                              <div class="team-social">
+                                  <a class="btn btn-outline-light  mx-1" href="#">more <i class="bi bi-three-dots"></i></a>
+                              </div>
+                          </div>
+                      </div>
+
+                                            
+
+                      <div class="team-item text-center bg-white rounded overflow-hidden "><br>
+                          <h5 class="mb-2 px-4">Nisha Yadav</h5>
+                          <p class="mb-3 px-0">English</p>
+                          <p class="mb-3 px-0" style="padding-bottom: 15px;">Teacher</p>
+                          <div class="team-img position-relative">
+                              <img class="img-fluid" src="{% static 'img/TeacherProfilePicture/Yadav.jpg' %}" alt="">
+                              <div class="team-social">
+                                  <a class="btn btn-outline-light  mx-1" href="#">more <i class="bi bi-three-dots"></i></a>
+                              </div>
+                          </div>
+                      </div>
+
+                                            
+
+                      <div class="team-item text-center bg-white rounded overflow-hidden "><br>
+                          <h5 class="mb-2 px-4">Balaji Kolekar</h5>
+                          <p class="mb-3 px-0">Chemistry</p>
+                          <p class="mb-3 px-0" style="padding-bottom: 15px;">Teacher</p>
+                          <div class="team-img position-relative">
+                              <img class="img-fluid" src="{% static 'img/TeacherProfilePicture/Kolekar.jpg' %}" alt="">
+                              <div class="team-social">
+                                  <a class="btn btn-outline-light  mx-1" href="#">more <i class="bi bi-three-dots"></i></a>
+                              </div>
+                          </div>
+                      </div>
+
+                                            
+
+                      <div class="team-item text-center bg-white rounded overflow-hidden "><br>
+                        <h5 class="mb-2 px-4">Santosh Godghase</h5>
+                        <p class="mb-3 px-0">Hindi/Marathi/ART & CRAFT</p>
+                        <p class="mb-3 px-0" style="padding-bottom: 15px;">Teacher</p>
+                        <div class="team-img position-relative">
+                            <img class="img-fluid" src="{% static 'img/TeacherProfilePicture/Godghase.jpg' %}" alt="">
+                            <div class="team-social">
+                                <a class="btn btn-outline-light  mx-1" href="#">more <i class="bi bi-three-dots"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                                            
+
+                    <div class="team-item text-center bg-white rounded overflow-hidden "><br>
+                      <h5 class="mb-2 px-4">Mannan Ali</h5>
+                      <p class="mb-3 px-0">Physical Education</p>
+                      <p class="mb-3 px-0" style="padding-bottom: 15px;">Teacher</p>
+                      <div class="team-img position-relative">
+                          <img class="img-fluid" src="{% static 'img/TeacherProfilePicture/Ali.jpg' %}" alt="">
+                          <div class="team-social">
+                              <a class="btn btn-outline-light  mx-1" href="#">more <i class="bi bi-three-dots"></i></a>
+                          </div>
+                      </div>
+                  </div>
+
+                                            
+
+                      <div class="team-item text-center bg-white rounded overflow-hidden "><br>
+                          <h5 class="mb-2 px-4">Madhusudan Pramanik</h5>
+                          <p class="mb-3 px-0">Physical Education</p>
+                          <p class="mb-3 px-0" style="padding-bottom: 15px;">Teacher</p>
+                          <div class="team-img position-relative">
+                              <img class="img-fluid" src="{% static 'img/TeacherProfilePicture/Pramanik.jpg' %}" alt="">
+                              <div class="team-social">
+                                  <a class="btn btn-outline-light  mx-1" href="#">more <i class="bi bi-three-dots"></i></a>
+                              </div>
+                          </div>
+                      </div>
+
+                                            
+                                
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  <!-- Team End -->
+
+
+
+
+    <link href="{% static 'css/owl.carousel.min.css' %}" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="{% static 'JS/owl.carousel.min.js'%}"></script>
+    <script src="{% static 'JS/moment.min.js' %}"></script>
+    <script src="{% static 'JS/tempusdominus-bootstrap-4.min.js' %}"></script>
+    <script src="{% static 'JS/main_staff.js' %}"></script>
+    {% endblock body_content %}

@@ -1,0 +1,223 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block style %}
+.general-info-header{
+height: 300px;
+width: 98%;
+background-image: linear-gradient(to top, #064B7B , #0098D7);
+margin-top: 8px;
+border-radius: 10px;
+}
+.general-info-header .waves_img{
+    height: auto;
+    width: 100%;
+    position: relative;
+    transform: translateY(2rem);
+
+}
+@media screen and (max-width: 770px){
+    .general-info-header .waves_img{
+    height: auto;
+    width: 100%;
+    position: relative;
+    transform: translateY(1rem);
+} 
+}
+
+
+.banner-btn a{
+    border-radius: 8px;
+	width: 170px;
+	text-decoration: none;
+	display: inline-block;
+	margin: 0 10px;
+	padding: 12px 0;
+	color: #0098D7;
+    background-color: rgb(255, 255, 255);
+	border: 1px solid rgb(255, 255, 255);
+	position: relative;
+	z-index: 1;
+	transition: color 0.5s;
+	margin-top: 10px;
+    font-weight: bold;
+}
+
+.banner-btn a span{
+width: 0%;
+height: 100%;
+position: absolute;
+top: 0;
+left: 0;
+background: linear-gradient(to right, #064B7B , #0098D7);
+z-index: -1;
+transition: 0.5s;
+}
+.banner-btn a:hover span{
+    border-radius: 8px;
+	width: 100%
+}
+.banner-btn a:hover{
+	color:rgb(255, 255, 255);
+}
+
+
+
+
+
+
+.adress, .map{
+    border-radius: 10px;
+    border: 2px solid gray;
+    box-shadow: 0px 0px 10px;
+    width: 98%;
+    margin: 1rem ;
+}
+
+
+.containt{
+    box-shadow: 0px 0px 5px;
+    background-color: #ffffff;
+    border-radius: 5px;
+}
+
+.container1{
+    margin-top: 20px;
+    padding: 25px;
+}
+.row1{
+    padding: 5px;
+}
+.col_sm_12, .col_sm_6{
+    box-shadow: 0px 0px 10px;
+    width: 100%;
+    border-radius: .5rem;
+}
+h3{
+    color: #0098D7;
+}
+
+.right-grid{
+    position: relative;
+    transform: translateX(8rem);
+}
+
+.left-grid{
+    position: relative;
+    transform: translateX(3rem);
+}
+
+.pad-top{
+    padding: 2rem;
+}
+
+@media screen and (max-width: 770px){
+    .container1{
+    padding: 25px;
+}
+
+.containt{
+    margin-top: 50px;
+    box-shadow: 5px 0px 5px;
+    background-color: #ffffff;
+    border-radius: 50px;
+}
+
+
+.row1{
+    padding: 20px;
+}
+.col_sm_12, .col_sm_6{
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px;
+    margin-top: 5px;
+}
+p{
+    margin: 30px;
+    text-align: left;
+}
+.right-grid{
+    position: relative;
+    transform: translateX(0rem);
+}
+
+.left-grid{
+    position: relative;
+    transform: translateX(0rem);
+}
+.pad-top{
+    padding: 0rem;
+}
+}
+{% endblock style %}
+
+
+
+{% block body_content %}
+    <!-- About Header Buttons Start -->
+    <center> <div class="general-info-header">
+        <div class="banner-btn">
+            <a href="{% url 'school_info' %}" style="margin-top: -28px;"  data-aos="fade-down" data-aos-delay="150"> <span></span>School Info &nbsp;&nbsp;</a>
+            <a href="{% url 'vision_and_mission' %}"   data-aos="fade-down" data-aos-delay="200"> <span></span>Vision And Mission &nbsp;&nbsp;</a>
+            <a href="{% url 'founder_message' %}"   data-aos="fade-down" data-aos-delay="100"> <span></span>Founder Message &nbsp;&nbsp;</a>
+            <a href="{% url 'principal_message' %}"  data-aos="fade-down" data-aos-delay="100"> <span></span>Principal Message &nbsp;&nbsp;</a>
+            <br>
+            <a href="{% url 'phylosophy' %}"  data-aos="fade-down" data-aos-delay="300"> <span></span>Our Phylosophy&nbsp;&nbsp;</a>
+            <a href="{% url 'alumni' %}"   data-aos="fade-down" data-aos-delay="50"> <span></span> Alumni &nbsp;&nbsp;</a>
+            <a href="#" style="color: white; background: linear-gradient(to right, #064B7B , #0098D7);"   data-aos="fade-down" data-aos-delay="250"> <span></span>Location &nbsp;&nbsp;</a>
+            <a href="{% url 'chikhli_city' %}"   data-aos="fade-down" data-aos-delay="250"> <span></span>Chilkhli City &nbsp;&nbsp;</a>
+      </div>
+     <img src="{% static 'img/waves.png' %}" alt="" class="waves_img">
+    </div>
+</center> 
+    <!-- About Header Buttons Stop -->
+
+<br>
+
+
+<div class="container containt container1 " data-aos="fade-down">
+    <div class="row row1">
+        <div class="col-sm-12">
+            <center><h3>Bhavana Public School& Junior college (CBSE)</h3></center>
+            <center><h6>CBSE Affiliation No: 1130216, School code: 30278</h6></center>
+        </div>
+    </div>
+    <div class="row row1 " >
+      <div class="col-sm-5 col_sm_6 left-grid pad-top" >
+            <p data-aos="fade-right" data-aos-delay="200"><i class="fa fa-map-marker-alt mr-2"></i> Pundlik Nagar, Degaon, Tq.Chilkhli Dist.Washim</p> 
+            <p data-aos="fade-right" data-aos-delay="250"><i class="fa fa-phone-alt mr-2"></i> +91-9146008731</p> 
+            <p data-aos="fade-right" data-aos-delay="300" style="font-size:15px"><i class="fa fa-envelope mr-2"></i> bhavanapublicschool22@gmail.com</p> 
+            <p data-aos="fade-right" data-aos-delay="350"><i class="fa fa-globe-africa mr-2"></i> www.bhavanapublicschool.com</p> 
+      </div>
+      <div class="col-sm-5 col_sm_6 right-grid">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3748.2520265480716!2d76.81510501486676!3d20.039883686542318!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd092b0ac7989d3%3A0x6d822abab8aeb98d!2sBhavana%20Public%20School!5e0!3m2!1sen!2sin!4v1664101404031!5m2!1sen!2sin" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" data-aos="fade-left" data-aos-delay="100"></iframe>
+
+      </div>
+    </div>
+</div>
+
+
+
+
+<div class="container containt container1 " data-aos="fade-down">
+    <div class="row row1">
+        <div class="col-sm-12">
+            <center><h3>LYCEUM PUBLIC SCHOOL</h3></center>
+            <center><h6>CBSE BASED</h6></center>
+        </div>
+    </div>
+    <div class="row row1 " >
+      <div class="col-sm-5 col_sm_6 left-grid pad-top" >
+            <p data-aos="fade-right" data-aos-delay="200"><i class="fa fa-map-marker-alt mr-2"></i> Civil Line, Beside MP Office Resod, Dist.Washim</p> 
+            <p data-aos="fade-right" data-aos-delay="250"><i class="fa fa-phone-alt mr-2"></i> +91-7796465306</p> 
+            <p data-aos="fade-right" data-aos-delay="300"><i class="fa fa-envelope mr-2"></i> ---  </p> 
+            <p data-aos="fade-right" data-aos-delay="350"><i class="fa fa-globe-africa mr-2"></i> www.bhavanapublicschool.com</p> 
+      </div>
+      <div class="col-sm-5 col_sm_6 right-grid">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3749.8001150413074!2d76.78967561491527!3d19.9749066865786!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd08ce2ae382865%3A0x357913f03165accc!2sLyceum%20School%2C%20Chilkhli-444506!5e0!3m2!1sen!2sin!4v1665832808935!5m2!1sen!2sin" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" data-aos="fade-left" data-aos-delay="100"></iframe>
+
+      </div>
+    </div>
+</div>
+
+{% endblock body_content %}

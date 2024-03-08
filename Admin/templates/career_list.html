@@ -1,0 +1,91 @@
+{% extends "admin_base.html" %}
+
+
+{% block content %}
+
+<main id="main" class="main">
+
+    <div class="pagetitle">
+        <h1>Career List</h1>
+        
+    </div><!-- End Page Title -->
+
+    <section class="section dashboard">
+        <div class="row">
+
+            <!-- Left side columns -->
+            <div class="col-lg-12">
+                <div style="padding:2%" >
+                    <!-- Left side columns -->
+                    <div>
+                            <div class="" style="overflow:scroll;">
+                                <table id="example" class="table table-striped" style="overflow:scroll;  width:100%; min-width: max-content;">
+                                    <thead>
+                                        <tr style="background:#02B4C3;">
+                                                <th scope="col" class="text-center text-white" style="">Sr.No</th> 
+                                                <th scope="col" class="text-center text-white" style="">Full Name</th> 
+                                                <th scope="col" class="text-center text-white" style="">E-mail</th>
+                                                <th scope="col" class="text-center text-white" style="">Mobile</th>
+                                                <th scope="col" class="text-center text-white" style="">Resume</th>
+                                                <th scope="col" class="text-center text-white" style="">Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {% if rec %}
+                                        {% for r in rec %}
+                                        <tr>
+                                            <td>{{forloop.counter}}</td>
+                                            <td>{{r.full_name}}</td>
+                                            <td>{{r.email}}</td>
+                                            <td>{{r.mobile}}</td>
+                                            <td><a href="{{r.resume.url}}" class="btn btn-primary" Download><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M21 14a1 1 0 0 0-1 1v4a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-4a1 1 0 0 0-2 0v4a3 3 0 0 0 3 3h14a3 3 0 0 0 3-3v-4a1 1 0 0 0-1-1Zm-9.71 1.71a1 1 0 0 0 .33.21a.94.94 0 0 0 .76 0a1 1 0 0 0 .33-.21l4-4a1 1 0 0 0-1.42-1.42L13 12.59V3a1 1 0 0 0-2 0v9.59l-2.29-2.3a1 1 0 1 0-1.42 1.42Z"/></svg></a></td>
+                                            <td>
+                                            <center>
+                                                <a href="{% url "delete_career" r.id %}" class="btn btn-danger px-3">Delete</a>    
+                                            </center>
+                                            </td>
+                                        </tr>
+                                        {% endfor %}
+                                        {% else %} 
+                                        {% endif %}
+                                    </tbody>
+                                </table>
+                            </div>
+            
+                    </div>
+                </div><!-- End Left side columns -->
+
+
+            </div>
+        </div><!-- End Left side columns -->
+
+    </section>
+
+<!-- Add DataTables JavaScript -->
+<script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+
+<script>
+    $(document).ready(function() {
+        $('#example').DataTable({
+            "pageLength": 10, // Number of records per page
+            "ordering": true, // Enable sorting
+            "searching": true // Enable searching
+            // More options can be added here
+        });
+    });
+</script>
+</script>
+
+<script>
+  // Get the element by its id
+var myInput = document.getElementById("career_list");
+// Add a class to the element
+myInput.classList.add("active");
+</script>
+
+</main><!-- End #main -->
+
+
+{% endblock content %}
+
+ 

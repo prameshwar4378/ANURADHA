@@ -1,0 +1,273 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block style %}
+.general-info-header{
+    height: 240px;
+    width: 98%;
+    background-image: linear-gradient(to top, #064B7B , #0098D7);
+    margin-top: 8px;
+    border-radius: 10px;
+    }
+    .general-info-header .waves_img{
+        height: auto;
+        width: 100%;
+        position: relative;
+        transform: translateY(2rem);
+    
+    }
+
+    @media screen and (max-width: 770px){
+        .general-info-header{
+            height:100px;
+            border-radius:0px 0px 50px 50px;
+        }
+        .general-info-header .waves_img{
+        width: 100%;
+        position: relative;
+        transform: translateY(1rem);
+        display:none;
+    } 
+    
+    .inner-class{
+        border-radius:10px;
+        box-shadow:0px 0px 10px;
+        padding:7px;
+    }
+    h4{
+        margin-top:15px;
+        text-align:center;
+    }
+    }
+    
+    
+    .banner-btn a{
+        border-radius: 8px;
+        width: 170px;
+        text-decoration: none;
+        display: inline-block;
+        margin: 0 10px;
+        padding: 12px 0;
+        color: #0098D7;
+        background-color: rgb(255, 255, 255);
+        border: 1px solid rgb(255, 255, 255);
+        position: relative;
+        z-index: 1;
+        transition: color 0.5s;
+        margin-top: 10px;
+        font-weight: bold;
+    }
+    
+    .banner-btn a span{
+    width: 0%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: linear-gradient(to right, #064B7B , #0098D7);
+    z-index: -1;
+    transition: 0.5s;
+    }
+    .banner-btn a:hover span{
+        border-radius: 8px;
+        width: 100%
+    }
+    .banner-btn a:hover{
+        color:rgb(255, 255, 255);
+    }
+
+    @media screen and (max-width: 400px) {
+        .banner-btn a {
+          font-size: 12px;
+          width: 130px;
+        }
+      } 
+
+
+
+
+   
+
+
+
+.container-1{
+    background-color:white;
+    box-shadow:0px 0px 10px;
+    border-radius:40px;
+    padding:20px;
+}
+.row-1{
+    box-shadow:0px 0px 10px;
+    border-radius:5px;
+    margin:10px;
+    padding:5px;
+}
+h2{
+    text-align:center;
+    color:#0098D7
+}
+h3{
+    text-align:left;
+    color:#0098D7
+}
+.icons{
+    padding:50px;
+    {% comment %} height:100px; {% endcomment %}
+    text-align:center;
+}
+.icons i{
+    color:#0098D7;
+    font-size:30px;
+    border:2px solid #0098D7;
+    padding:7px;
+    border-radius:5px;
+    transition:0.5s;
+    margin:10px;
+    }
+    
+.icons i:hover{
+        background-color:#0098D7;
+        color:white;
+        font-size:50px;
+        border:2px solid #0098D7;
+        padding:7px;
+        border-radius:5px;
+        transition:0.8s;
+        }
+        
+H6{
+    margin-top:15px;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+	html {
+		scroll-behavior: auto;
+	}
+}
+
+{% endblock style %}
+
+
+
+{% block body_content %}
+
+    <!-- About Header Buttons Start -->
+    <center> <div class="general-info-header">
+        <div class="banner-btn">
+            <!--
+            <a href="{% url 'teaching_staff' %}"  data-aos="fade-down" data-aos-delay="150" data-aos-duration="1000"> <span></span> Teaching Staff &nbsp;&nbsp;</a>
+            <a href="{% url 'school_times' %}" data-aos="fade-down" data-aos-delay="50" data-aos-duration="1000"> <span></span>School Times &nbsp;&nbsp;</a>
+            <a href="{% url 'important_days' %}"  data-aos="fade-down" data-aos-delay="250" data-aos-duration="1000"> <span></span>Important Days &nbsp;&nbsp;</a>
+            <a href="{% url 'calender' %}"  data-aos="fade-down" data-aos-delay="150" data-aos-duration="1000"> <span></span>Calender &nbsp;&nbsp;</a><br>
+            <a href="{% url 'parents_meet' %}" data-aos="fade-down" data-aos-delay="350" data-aos-duration="1000"> <span></span>Parents Meet&nbsp;&nbsp;</a>
+            <a href="{% url 'parents_consent_form' %}" data-aos="fade-down" data-aos-delay="200" data-aos-duration="1000"> <span></span>Parents Consent&nbsp;&nbsp;</a>
+            -->
+            <a href="{% url 'uniform' %}"  data-aos="fade-down" data-aos-delay="200" data-aos-duration="1000"> <span></span>Uniform &nbsp;&nbsp;</a>
+            <a href="#"  style="margin-top: -28px; color: white; background: linear-gradient(to right, #064B7B , #0098D7);" data-aos="fade-down" data-aos-delay="300" data-aos-duration="1000"> <span></span>Rules&nbsp;&nbsp;</a>
+        </div>
+     <img src="{% static 'img/waves.png' %}" alt="" class="waves_img">
+    </div>
+</center> 
+    <!-- About Header Buttons Stop -->
+
+<br>
+
+<div class="container container-1">
+    <div class="row">
+        <div class="col-sm-12">
+            <br>
+            <center><h2>Rules and Guidlines</h2></center>
+        </div>
+    </div>
+    <br>
+    <div class="row row-1 icons"  data-aos="fade-down" data-aos-delay="150" data-aos-duration="1000">
+        <center></center>
+        <div class="col-sm-4"><a href="#student"><i class="bi bi-universal-access"></i><br><h6> Student</h6></a></div>
+        <div class="col-sm-4"><a href="#parent"><i class="bi bi-person-fill"></i><br><h6>Parents</h6></a></div>
+        <div class="col-sm-4"><a href="#rules"><i class="bi bi-bank2"></i><br><h6>Rules</h6></a></div>
+    </div>
+<br>
+    <div class="row row-1" id="student"  data-aos="fade-down" data-aos-delay="150" data-aos-duration="1000">
+        <div class="col-sm-12">
+            <br>
+            <center><h3>Guidelines for Students</h3></center>
+        </div>
+               <br><p><spam  data-aos="fade-left" data-aos-delay="100" data-aos-duration="1000"> <i class="fa fa-arrow-alt-circle-right mr-2" style="color:#0098D7; margin:5px;"></i>Each student must carry his/her identity card to school every day. </p> 
+               <br><p><spam  data-aos="fade-left" data-aos-delay="100" data-aos-duration="1000"> <i class="fa fa-arrow-alt-circle-right mr-2" style="color:#0098D7; margin:5px;"></i>Each student should affix his/her photograph and write the required information, duly signed by the parent, in the space provided in the school diary.   </p> 
+               <br><p><spam  data-aos="fade-left" data-aos-delay="100" data-aos-duration="1000"> <i class="fa fa-arrow-alt-circle-right mr-2" style="color:#0098D7; margin:5px;"></i>In no case students will be allowed if they are late.   </p> 
+               <br><p><spam  data-aos="fade-left" data-aos-delay="100" data-aos-duration="1000"> <i class="fa fa-arrow-alt-circle-right mr-2" style="color:#0098D7; margin:5px;"></i>Students are not allowed to bring mobile phone or wear gold ornaments in school. If they do so, they will be confiscated and such students will have to pay a fine of Rs. 500/- for the same.   </p> 
+               <br><p><spam  data-aos="fade-left" data-aos-delay="100" data-aos-duration="1000"> <i class="fa fa-arrow-alt-circle-right mr-2" style="color:#0098D7; margin:5px;"></i>Changing classroom between periods should be done in an orderly manner and silently. Students should not unnecessary leave their class at the end of every period.   </p> 
+               <br><p><spam  data-aos="fade-left" data-aos-delay="100" data-aos-duration="1000"> <i class="fa fa-arrow-alt-circle-right mr-2" style="color:#0098D7; margin:5px;"></i>Students should be habitually clean and always neatly dressed. The school uniform should be worn on all working days and all the students who are slovenly dressed or not in uniform will be sent home. Wearing low waist trousers/skirts is forbidden.   </p> 
+               <br><p><spam  data-aos="fade-left" data-aos-delay="100" data-aos-duration="1000"> <i class="fa fa-arrow-alt-circle-right mr-2" style="color:#0098D7; margin:5px;"></i>All boys (except Sikhs) must keep their hair short. Girls must tie their hair with a white band in single.   </p> 
+               <br><p><spam  data-aos="fade-left" data-aos-delay="100" data-aos-duration="1000"> <i class="fa fa-arrow-alt-circle-right mr-2" style="color:#0098D7; margin:5px;"></i>Students with improper hair style or hair cut will not be permitted in school premises. Use of hair gel is not allowed.   </p> 
+               <br><p><spam  data-aos="fade-left" data-aos-delay="100" data-aos-duration="1000"> <i class="fa fa-arrow-alt-circle-right mr-2" style="color:#0098D7; margin:5px;"></i>No books, slam books (other than text books or library books), magazines should be brought to the school.   </p> 
+               <br><p><spam  data-aos="fade-left" data-aos-delay="100" data-aos-duration="1000"> <i class="fa fa-arrow-alt-circle-right mr-2" style="color:#0098D7; margin:5px;"></i>Students who come to school escorted should never leave before the escort arrives. In case of delay, they should report to the school office.   </p> 
+               <br><p><spam  data-aos="fade-left" data-aos-delay="100" data-aos-duration="1000"> <i class="fa fa-arrow-alt-circle-right mr-2" style="color:#0098D7; margin:5px;"></i>Students are expected to respect school property. No student should damage any school furniture, write or draw anything on the walls or in any way damage things belonging to others. Any school property damaged even by accident should be reported at once to the class teacher or to the co-ordinator or the Principal.   </p> 
+               <br><p><spam  data-aos="fade-left" data-aos-delay="100" data-aos-duration="1000"> <i class="fa fa-arrow-alt-circle-right mr-2" style="color:#0098D7; margin:5px;"></i>Bhavana Public School students should invariably be polite wherever they go. They should always remember that the school is judged by their conduct. They should greet their teachers when they meet them. Bullying and use of filthy language are punishable offences.   </p> 
+               <br><p><spam  data-aos="fade-left" data-aos-delay="100" data-aos-duration="1000"> <i class="fa fa-arrow-alt-circle-right mr-2" style="color:#0098D7; margin:5px;"></i>Students are not allowed to bring any sharp instruments such as knives, blades etc. or any kind of object that can cause injury to others.   </p> 
+               <br><p><spam  data-aos="fade-left" data-aos-delay="100" data-aos-duration="1000"> <i class="fa fa-arrow-alt-circle-right mr-2" style="color:#0098D7; margin:5px;"></i>Students are advised to keep their class room, school building and campus as clean as possible, and throw leftovers into the dustbins only.   </p> 
+               <br><p><spam  data-aos="fade-left" data-aos-delay="100" data-aos-duration="1000"> <i class="fa fa-arrow-alt-circle-right mr-2" style="color:#0098D7; margin:5px;"></i>The school is not responsible for goods or money lost. It is not advisable to bring valuable articles (like expensive watches or fountain pens) to school.   </p> 
+               <br><p><spam  data-aos="fade-left" data-aos-delay="100" data-aos-duration="1000"> <i class="fa fa-arrow-alt-circle-right mr-2" style="color:#0098D7; margin:5px;"></i>Bhavana  Public School provides education from 1st to XII. Therefore, it is expected that the juniors should be treated with love and affection, while the juniors show all due respect to their seniors.   </p> 
+               <br><p><spam  data-aos="fade-left" data-aos-delay="100" data-aos-duration="1000"> <i class="fa fa-arrow-alt-circle-right mr-2" style="color:#0098D7; margin:5px;"></i>No student is allowed to visit any of the kiosks situated outside the school in school uniform and if found doing so, he will be subjected to punishment.   </p> 
+               <br><p><spam  data-aos="fade-left" data-aos-delay="100" data-aos-duration="1000"> <i class="fa fa-arrow-alt-circle-right mr-2" style="color:#0098D7; margin:5px;"></i>Students including in aggressive or violent behavior, will not be allowed to travel by school bus.   </p> 
+               <br><p><spam  data-aos="fade-left" data-aos-delay="100" data-aos-duration="1000"> <i class="fa fa-arrow-alt-circle-right mr-2" style="color:#0098D7; margin:5px;"></i>A permission card signed by the teacher (in charge of a period) must be carried by a child while going to the clinic for treatment.   </p> 
+               <br><p><spam  data-aos="fade-left" data-aos-delay="100" data-aos-duration="1000"> <i class="fa fa-arrow-alt-circle-right mr-2" style="color:#0098D7; margin:5px;"></i>Canteen facility is available only in break time or after the school hours. If there is an emergency, children can avail of this facility with the concerned teacher's permission.   </p> 
+               <br><p><spam  data-aos="fade-left" data-aos-delay="100" data-aos-duration="1000"> <i class="fa fa-arrow-alt-circle-right mr-2" style="color:#0098D7; margin:5px;"></i>Students should not indulge in violent or destructive activities or else they will be subjected to punishment.   </p> 
+               <br><p><spam  data-aos="fade-left" data-aos-delay="100" data-aos-duration="1000"> <i class="fa fa-arrow-alt-circle-right mr-2" style="color:#0098D7; margin:5px;"></i>Students should not boycott the orders, directions and instructions given to them by the school authorities. Though they are allowed to discuss any issue openly in the open students-Principal meet.   </p> 
+               <br><p><spam  data-aos="fade-left" data-aos-delay="100" data-aos-duration="1000"> <i class="fa fa-arrow-alt-circle-right mr-2" style="color:#0098D7; margin:5px;"></i>Students using unfair means during examination will have to face disciplinary action as decided by the school authorities.   </p> 
+               <br><p><spam  data-aos="fade-left" data-aos-delay="100" data-aos-duration="1000"> <i class="fa fa-arrow-alt-circle-right mr-2" style="color:#0098D7; margin:5px;"></i>No attendance would be given to a student during period of suspension.   </p> 
+               <br><p><spam  data-aos="fade-left" data-aos-delay="100" data-aos-duration="1000"> <i class="fa fa-arrow-alt-circle-right mr-2" style="color:#0098D7; margin:5px;"></i>Students are forbidden to bring crackers, explosives and other dangerous materials to school.   </p> 
+               <br><p><spam  data-aos="fade-left" data-aos-delay="100" data-aos-duration="1000"> <i class="fa fa-arrow-alt-circle-right mr-2" style="color:#0098D7; margin:5px;"></i>A student's name will be struck off the rolls if he/she remains absent from school for six continuous days without any information.   </p> 
+               <br><p><spam  data-aos="fade-left" data-aos-delay="100" data-aos-duration="1000"> <i class="fa fa-arrow-alt-circle-right mr-2" style="color:#0098D7; margin:5px;"></i>Every student must have minimum 80% of attendance (unless medically advised rest) to appear in all examination and to be in the next class.   </p> 
+                <p><spam  data-aos="fade-left" data-aos-delay="100" data-aos-duration="1000"> <i class="fa fa-arrow-alt-circle-right mr-2" style="color:#0098D7; margin:5px;"></i>Students suffering from any infectious/contagious disease will be allowed to attend the school only after producing the fitness certificate from proper medical authority.   </p> 
+               <br><p><spam  data-aos="fade-left" data-aos-delay="100" data-aos-duration="1000"> <i class="fa fa-arrow-alt-circle-right mr-2" style="color:#0098D7; margin:5px;"></i>Students are not allowed to wear or bring fancy and costly items to the school. Girl students shall not use nail polish, mehandi, etc.   </p> 
+    </div>
+
+<br>
+    
+    <div class="row row-1" id="parent"  data-aos="fade-down" data-aos-delay="150" data-aos-duration="1000">
+        <div class="col-sm-12">
+            <br>
+            <center><h3>Guidelines for Parents</h3></center>
+        </div>
+         <br><p><spam  data-aos="fade-left" data-aos-delay="100" data-aos-duration="1000"> <i class="fa fa-arrow-alt-circle-right mr-2" style="color:#0098D7; margin:5px;"></i>Parents/guardians are requested to pay expenses incurred in excursions and picnics from time to time.   </p> 
+         <br><p><spam  data-aos="fade-left" data-aos-delay="100" data-aos-duration="1000"> <i class="fa fa-arrow-alt-circle-right mr-2" style="color:#0098D7; margin:5px;"></i>Parents/guardians are requested to attend the Parents Teacher meet so as to keep a track of their child time to time.   </p> 
+         <br><p><spam  data-aos="fade-left" data-aos-delay="100" data-aos-duration="1000"> <i class="fa fa-arrow-alt-circle-right mr-2" style="color:#0098D7; margin:5px;"></i>Uniforms other than those prescribed by the school are prohibited.   </p> 
+         <br><p><spam  data-aos="fade-left" data-aos-delay="100" data-aos-duration="1000"> <i class="fa fa-arrow-alt-circle-right mr-2" style="color:#0098D7; margin:5px;"></i>Uniforms and Books are available at the Logistic Department of the school.   </p> 
+         <br><p><spam  data-aos="fade-left" data-aos-delay="100" data-aos-duration="1000"> <i class="fa fa-arrow-alt-circle-right mr-2" style="color:#0098D7; margin:5px;"></i>Parents are requested not to permit their wards to bring mobile, camera, walkman etc. to the school premises at any cost.   </p> 
+         <br><p><spam  data-aos="fade-left" data-aos-delay="100" data-aos-duration="1000"> <i class="fa fa-arrow-alt-circle-right mr-2" style="color:#0098D7; margin:5px;"></i>Parents are requested not to go to the class rooms and disturb the classes.   </p> 
+         <br><p><spam  data-aos="fade-left" data-aos-delay="100" data-aos-duration="1000"> <i class="fa fa-arrow-alt-circle-right mr-2" style="color:#0098D7; margin:5px;"></i>Parents should take the permission from office to meet the teachers.   </p> 
+         <br><p><spam  data-aos="fade-left" data-aos-delay="100" data-aos-duration="1000"> <i class="fa fa-arrow-alt-circle-right mr-2" style="color:#0098D7; margin:5px;"></i>School rules can be changed without prior notice or reason.   </p> 
+         <br><p><spam  data-aos="fade-left" data-aos-delay="100" data-aos-duration="1000"> <i class="fa fa-arrow-alt-circle-right mr-2" style="color:#0098D7; margin:5px;"></i>Parents are requested to pay all the fees within due dates to avoid inconvenience to your ward.   </p> 
+         <br><p><spam  data-aos="fade-left" data-aos-delay="100" data-aos-duration="1000"> <i class="fa fa-arrow-alt-circle-right mr-2" style="color:#0098D7; margin:5px;"></i>If parents fail to pay the fees in due time the child will not be allowed to sit in the class or test /examination.   </p> 
+         <br><p><spam  data-aos="fade-left" data-aos-delay="100" data-aos-duration="1000"> <i class="fa fa-arrow-alt-circle-right mr-2" style="color:#0098D7; margin:5px;"></i>Parents has to follow the rules & regulations of the school, designed & noticed to you time to time.   </p> 
+         <br><p><spam  data-aos="fade-left" data-aos-delay="100" data-aos-duration="1000"> <i class="fa fa-arrow-alt-circle-right mr-2" style="color:#0098D7; margin:5px;"></i>Once the School Tuition fees paid, will not be refunded at any circumstances.   </p> 
+         <br>
+    </div>
+
+<br>
+    
+    
+    <div class="row row-1" id="rules"  data-aos="fade-down" data-aos-delay="150" data-aos-duration="1000">
+        <div class="col-sm-12">
+            <br>
+            <center><h3>Exams Rules</h3></center>
+        </div>
+         <br><p><spam  data-aos="fade-left" data-aos-delay="100" data-aos-duration="1000"> <i class="fa fa-arrow-alt-circle-right mr-2" style="color:#0098D7; margin:5px;"></i>Weekly practice test and all the term examination will be conducted during the academic year.   </p> 
+         <br><p><spam  data-aos="fade-left" data-aos-delay="100" data-aos-duration="1000"> <i class="fa fa-arrow-alt-circle-right mr-2" style="color:#0098D7; margin:5px;"></i>All the students must be present for all the term exams. No re-test or no re-exam will be allowed if a student is absent on the scheduled day of exam.   </p> 
+         <br><p><spam  data-aos="fade-left" data-aos-delay="100" data-aos-duration="1000"> <i class="fa fa-arrow-alt-circle-right mr-2" style="color:#0098D7; margin:5px;"></i>Timetable and syllabus is given is advance from the school. Students and parents may to go through the same.   </p> 
+         <br><p><spam  data-aos="fade-left" data-aos-delay="100" data-aos-duration="1000"> <i class="fa fa-arrow-alt-circle-right mr-2" style="color:#0098D7; margin:5px;"></i>It is instructed to all the students not to use any unfair means during tests and exams. If a students is found using unfair means cheating/ copying , suitable action will be taken against him/ or her. Only the equipment which is necessary for the exam should be kept on the desk.   </p> 
+         <br><p><spam  data-aos="fade-left" data-aos-delay="100" data-aos-duration="1000"> <i class="fa fa-arrow-alt-circle-right mr-2" style="color:#0098D7; margin:5px;"></i>Students are not allowed to move outside the class till the exam is over.   </p> 
+         <br><p><spam  data-aos="fade-left" data-aos-delay="100" data-aos-duration="1000"> <i class="fa fa-arrow-alt-circle-right mr-2" style="color:#0098D7; margin:5px;"></i>Students are advised to maintain proper conduct during the examination.   </p> 
+         <br><p><spam  data-aos="fade-left" data-aos-delay="100" data-aos-duration="1000"> <i class="fa fa-arrow-alt-circle-right mr-2" style="color:#0098D7; margin:5px;"></i>The schedule of examination or test will be communicated through diary notes and circulars.   </p> 
+         <br>
+    </div>
+
+</div>
+
+{% endblock body_content %}

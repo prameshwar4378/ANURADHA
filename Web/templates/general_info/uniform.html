@@ -1,0 +1,292 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block links %}
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<meta content="Free HTML Templates" name="keywords">
+<meta content="Free HTML Templates" name="description">
+
+{% endblock links %}
+{% block style %}
+.general-info-header{
+    height: 240px;
+    width: 98%;
+    background-image: linear-gradient(to top, #064B7B , #0098D7);
+    margin-top: 8px;
+    border-radius: 10px;
+    }
+    .general-info-header .waves_img{
+        height: auto;
+        width: 100%;
+        position: relative;
+        transform: translateY(2rem);
+    
+    }
+
+    @media screen and (max-width: 770px){
+        .general-info-header{
+            height:100px;
+            border-radius:0px 0px 50px 50px;
+        }
+        .general-info-header .waves_img{
+        width: 100%;
+        position: relative;
+        transform: translateY(1rem);
+        display:none;
+    } 
+    
+    .inner-class{
+        border-radius:10px;
+        box-shadow:0px 0px 10px;
+        padding:7px;
+    }
+    h4{
+        margin-top:15px;
+        text-align:center;
+    }
+    }
+    
+    
+    .banner-btn a{
+        border-radius: 8px;
+        width: 170px;
+        text-decoration: none;
+        display: inline-block;
+        margin: 0 10px;
+        padding: 12px 0;
+        color: #0098D7;
+        background-color: rgb(255, 255, 255);
+        border: 1px solid rgb(255, 255, 255);
+        position: relative;
+        z-index: 1;
+        transition: color 0.5s;
+        margin-top: 10px;
+        font-weight: bold;
+    }
+    
+    .banner-btn a span{
+    width: 0%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: linear-gradient(to right, #064B7B , #0098D7);
+    z-index: -1;
+    transition: 0.5s;
+    }
+    .banner-btn a:hover span{
+        border-radius: 8px;
+        width: 100%
+    }
+    .banner-btn a:hover{
+        color:rgb(255, 255, 255);
+    }
+
+    @media screen and (max-width: 400px) {
+        .banner-btn a {
+          font-size: 12px;
+          width: 130px;
+        }
+      } 
+
+
+
+
+   
+
+{% comment %} 
+
+.container-1{
+    background-color:white;
+    box-shadow:0px 0px 10px;
+}
+.row{
+    display:flex;
+    flex-direction:row;
+    align-item:center;
+}
+.img{
+    width:55%;
+    text-align:right;
+    padding:20px;
+    border-radius:5px;
+}
+.img img{
+    width:400px;
+    border-radius:5px;
+}
+.details{
+    width:44%;
+    height:50%;
+    padding:20px;
+    position: relative;
+    left: -100px;
+    top: 150px;
+    background-color:white;
+    border:2px solid white;
+    border-radius:5px;
+    box-shadow:0px 0px 10px;
+}
+h3{
+    color: #0098D7;
+    text-align:center;
+    margin-bottom:20px;
+}
+p{
+    text-align:center;
+    margin:10px;
+}
+.details uniform-details{
+    text-align:center;
+}
+h2{
+    text-align:center;
+    color:#0098D7
+}
+
+@media screen and (max-width: 770px){
+    .row{
+        display:flex;
+        flex-direction:column;
+        align-item:center;
+    }
+    .img{
+        width:100%;
+        text-align:center;
+        padding:20px;
+        border-radius:5px;
+    }
+    .details{
+        width:90%;
+        height:50%;
+        padding:20px;
+        position: none;
+        left: 30px;
+        top: 0px;
+        background-color:white;
+        border:2px solid white;
+        border-radius:5px;
+        box-shadow:0px 0px 10px;
+        vertical-align: middle;
+    }
+     {% endcomment %}
+
+h3, h2{
+    color:#0098D7;
+}
+    
+.row-1{
+    padding: 50px 0;
+    text-align:center;
+}
+.container-1{
+    text-align:center;
+    border-radius:40px;
+    box-shadow:0px 0px 10px;
+    
+    {% comment %} height: 400px; {% endcomment %}
+}
+
+.main{
+    display: flex;
+    flex-direction: row;
+    align-items: left;
+    justify-content: space-around;
+}
+
+
+.girls, .boys{
+    width:45%;
+}
+.container-1 img{
+    width:90%;
+    margin:20px;
+    border-radius:5px;
+    border:2px solid white;
+    box-shadow:0px 0px 10px;
+}
+
+.uniform-details{
+    background-color:white;
+    width:50%;
+    box-shadow:0px 0px 10px;
+    border-radius:5px;
+    position: relative;
+    left: 0px;
+    top: -100px;
+    margin-bottom:-60px;
+}
+
+@media screen and (max-width: 770px){
+    .uniform-details{
+    width:70%;
+    top: -80px;
+    margin-bottom:-60px;
+}
+}
+{% endblock style %}
+
+
+
+{% block body_content %}
+    <!-- About Header Buttons Start -->
+    <center> <div class="general-info-header">
+        <div class="banner-btn">
+            <!--
+            <a href="{% url 'teaching_staff' %}"  data-aos="fade-down" data-aos-delay="150" data-aos-duration="1000"> <span></span> Teaching Staff &nbsp;&nbsp;</a>
+            <a href="{% url 'school_times' %}" data-aos="fade-down" data-aos-delay="50" data-aos-duration="1000"> <span></span>School Times &nbsp;&nbsp;</a>
+            <a href="{% url 'important_days' %}"  data-aos="fade-down" data-aos-delay="250" data-aos-duration="1000"> <span></span>Important Days &nbsp;&nbsp;</a>
+            <a href="{% url 'calender' %}"  data-aos="fade-down" data-aos-delay="150" data-aos-duration="1000"> <span></span>Calender &nbsp;&nbsp;</a><br>
+            <a href="{% url 'parents_meet' %}" data-aos="fade-down" data-aos-delay="350" data-aos-duration="1000"> <span></span>Parents Meet&nbsp;&nbsp;</a>
+            <a href="{% url 'parents_consent_form' %}" data-aos="fade-down" data-aos-delay="200" data-aos-duration="1000"> <span></span>Parents Consent&nbsp;&nbsp;</a>
+        -->
+        <a href="#" style="margin-top: -28px; color: white; background: linear-gradient(to right, #064B7B , #0098D7);"  data-aos="fade-down" data-aos-delay="200" data-aos-duration="1000"> <span></span>Uniform &nbsp;&nbsp;</a>
+        <a href="{% url 'rules' %}" data-aos="fade-down" data-aos-delay="300" data-aos-duration="1000"> <span></span>Rules&nbsp;&nbsp;</a>
+    </div>
+     <img src="{% static 'img/waves.png' %}" alt="" class="waves_img">
+    </div>
+</center> 
+    <!-- About Header Buttons Stop -->
+{% comment %} <br>
+<div class="container container-1">
+    <br>
+    <h2>UNIFORM</h2>
+    <div class="row">
+        <div class="img">
+            <div class="uniform-img"  data-aos="fade-down" data-aos-delay="100" data-aos-duration="1000">
+                <img src="{% static 'img/uniform-girls.jpg' %}" alt="">
+            </div>
+         </div>
+       <div class="details"  data-aos="fade-left" data-aos-delay="200" data-aos-duration="1000">
+       <div class="uniform-details" >
+              <h3>  I to Xii Std  </h3>
+              <p>  Sky blue shirt <br>
+                Navy Blue Trouser <br>
+                Blazer (Carbon blue) <br>
+                Tie, Belt, Blue Socks and Black Shoes</p>
+       </div>
+    </div>
+</div>
+</div> {% endcomment %}
+<br>
+<div class="container container-1 bg-light" ><br>
+    <center><h2>UNIFORM</h2></center>
+    <div class="main" >
+    <div class="girls"  data-aos="fade-down" data-aos-delay="200" data-aos-duration="1000">
+        <img src=" https://pngimg.com/d/student_PNG127.png" alt="">
+    </div>
+    <div class="boys"  data-aos="fade-down" data-aos-delay="200" data-aos-duration="1000">
+        <img src="https://pngimg.com/d/student_PNG127.png " alt="">
+    </div>
+</div>
+   <center>
+                <div class="uniform-details"  data-aos="fade-down" data-aos-delay="600" data-aos-duration="1500">
+            <h3>  I to X Std  </h3>
+            <p>  Sky blue shirt <br>
+                Gray Trouser <br>
+                Blazer (Gray) <br>
+                Belt, Blue Socks and Black Shoes</p>
+    </div>
+</center>
+<br>
+</div>
+{% endblock body_content %}

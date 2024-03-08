@@ -1,0 +1,219 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block style %}
+.academics-header{
+height: 250px;
+width: 98%;
+background-image: linear-gradient(to top, #064B7B , #0098D7);
+margin-top: 8px;
+border-radius: 10px;
+}
+.academics-header .waves_img{
+    height: auto;
+    width: 100%;
+    position: relative;
+    transform: translateY(2rem);
+
+}
+@media screen and (max-width: 770px){
+    .academics-header{
+        height:120px;
+    }
+    .academics-header .waves_img{
+    height: auto;
+    width: 100%;
+    position: relative;
+    transform: translateY(1rem);
+} 
+
+}
+
+
+.banner-btn a{
+    border-radius: 8px;
+	width: 170px;
+	text-decoration: none;
+	display: inline-block;
+	margin: 0 10px;
+	padding: 12px 0;
+	color: #0098D7;
+    background-color: rgb(255, 255, 255);
+	border: 1px solid rgb(255, 255, 255);
+	position: relative;
+	z-index: 1;
+	transition: color 0.5s;
+	margin-top: 10px;
+    font-weight: bold;
+}
+
+.banner-btn a span{
+width: 0%;
+height: 100%;
+position: absolute;
+top: 0;
+left: 0;
+background: linear-gradient(to right, #064B7B , #0098D7);
+z-index: -1;
+transition: 0.5s;
+}
+.banner-btn a:hover span{
+    border-radius: 8px;
+	width: 100%
+}
+.banner-btn a:hover{
+	color:rgb(255, 255, 255);
+}
+
+
+
+
+
+
+
+
+.container-1{
+    background-color:white;
+    box-shadow:0px 0px 10px;
+    padding:20px;
+}
+.row-1{
+    box-shadow:0px 0px 10px;
+    border-radius:5px;
+    margin:10px;
+    padding:5px;
+}
+h2{
+    text-align:center;
+    color:#0098D7
+}
+h3{
+    text-align:left;
+    color:#0098D7
+}
+.icons{
+    padding:50px;
+    {% comment %} height:100px; {% endcomment %}
+    text-align:center;
+}
+.icons i{
+    color:#0098D7;
+    font-size:30px;
+    border:2px solid #0098D7;
+    padding:7px;
+    border-radius:5px;
+    transition:0.5s;
+    margin:10px;
+    }
+    
+.icons i:hover{
+        background-color:#0098D7;
+        color:white;
+        font-size:50px;
+        border:2px solid #0098D7;
+        padding:7px;
+        border-radius:5px;
+        transition:0.8s;
+        }
+        
+H6{
+    margin-top:15px;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+	html {
+		scroll-behavior: auto;
+	}
+}
+
+{% endblock style %}
+
+
+
+{% block body_content %}
+    <!-- About Header Buttons Start -->
+    <center> <div class="academics-header">
+        <div class="banner-btn">
+            <a href="{% url 'crriculum' %}"   data-aos="fade-down" data-aos-delay="100"  data-aos-duration="1000"> <span></span> CURRICULUM &nbsp;&nbsp;</a>
+            <a href="#" style="margin-top: -28px; color: white; background: linear-gradient(to right, #064B7B , #0098D7);"  data-aos="fade-down" data-aos-delay="100"  data-aos-duration="1000"> <span></span>Co-CURRICULUM &nbsp;&nbsp;</a>
+        </div>
+     <img src="{% static 'img/waves.png' %}" alt="" class="waves_img">
+    </div>
+</center> 
+    <!-- About Header Buttons Stop -->
+
+
+<br>
+<div class="container container-1">
+    <div class="row">
+        <div class="col-sm-12">
+            <br>
+            <center><h2>Co-Curricular Activities</h2></center>
+        </div>
+    </div>
+    <br>
+    <div class="row row-1 icons"  data-aos="fade-down" data-aos-delay="200"  data-aos-duration="1400">
+        <center></center>
+        <div class="col-sm-4 mt-2"><a href="#activity"><i class="bi bi-gear-wide-connected"></i><br><h6> Activity</h6></a></div>
+        <div class="col-sm-4 mt-2"><a href="#parent">`<i class="bi bi-book-half"></i><br><h6>Evaluation System</h6></a></div>
+        <div class="col-sm-4 mt-2"><a href="#rules"><i class="bi bi-bank2"></i><br><h6>Art & Sport</h6></a></div>
+    </div>
+<br>
+    <div class="row row-1" id="activity"  data-aos="fade-down" data-aos-delay="200"  data-aos-duration="1000">
+        <div class="col-sm-12">
+            <br>
+            <center><h3></h3></center>
+        </div>
+               <br><p><spam  data-aos="fade-left" data-aos-delay="100" data-aos-duration="1000"> <i class="fa fa-arrow-alt-circle-right mr-2" style="color:#0098D7; margin:5px;"></i>The Co-curricular activities bring in a sense of competitive spirit to compete with self-first and then with peers adding to the holistic nature of the curriculum for the benefit of the students. Extra-Curricular Activities also contribute to the over all development of the individual. Participation in activities of their passion can increase the brain function, help concentrate and manage their time better, all of which contribute to higher grades. High endurance sports, for example, will train students to focus and build stamina in the face of intense difficulty. This gives them an advantage when it comes to studying and taking exams. For the benefit of the students, provisions for the following extra- curricular activities have been made in the school premises.   </p> 
+               <br><p><spam  data-aos="fade-left" data-aos-delay="100" data-aos-duration="1000"> <i class="fa fa-arrow-alt-circle-right mr-2" style="color:#0098D7; margin:5px;"></i>Every Saturday CCA Periods and competitions are conducted to boost the team spirit and enhance the inherent talent among the students.   </p> 
+               <br><p><spam  data-aos="fade-left" data-aos-delay="100" data-aos-duration="1000"> <i class="fa fa-arrow-alt-circle-right mr-2" style="color:#0098D7; margin:5px;"></i>Yoga and meditation is practiced daily during morning assembly, to help the students to improve concentration and control over their feelings   </p> 
+               <br><p><spam  data-aos="fade-left" data-aos-delay="100" data-aos-duration="1000"> <i class="fa fa-arrow-alt-circle-right mr-2" style="color:#0098D7; margin:5px;"></i>Physical training classes are conducted for the right physical development of every child.   </p> 
+               <br><p><spam  data-aos="fade-left" data-aos-delay="100" data-aos-duration="1000"> <i class="fa fa-arrow-alt-circle-right mr-2" style="color:#0098D7; margin:5px;"></i>News hour during daily assembly keeps the children abreast of current affairs   </p> 
+               <br><p><spam  data-aos="fade-left" data-aos-delay="100" data-aos-duration="1000"> <i class="fa fa-arrow-alt-circle-right mr-2" style="color:#0098D7; margin:5px;"></i>Both modern and ancient games are played with required sports kits and guidance   </p> 
+               <br><p><spam  data-aos="fade-left" data-aos-delay="100" data-aos-duration="1000"> <i class="fa fa-arrow-alt-circle-right mr-2" style="color:#0098D7; margin:5px;"></i>Skits and drama competitions are conducted regularly to spread cultural awareness among the students   </p> 
+               <br><p><spam  data-aos="fade-left" data-aos-delay="100" data-aos-duration="1000"> <i class="fa fa-arrow-alt-circle-right mr-2" style="color:#0098D7; margin:5px;"></i>Classical and other various types of performing arts are organized   </p> 
+               <br><p><spam  data-aos="fade-left" data-aos-delay="100" data-aos-duration="1000"> <i class="fa fa-arrow-alt-circle-right mr-2" style="color:#0098D7; margin:5px;"></i>Educational tours, exhibitions and picnics are regularly arranged to make the children understand the unity in diversity of India   </p> 
+               <br><p><spam  data-aos="fade-left" data-aos-delay="100" data-aos-duration="1000"> <i class="fa fa-arrow-alt-circle-right mr-2" style="color:#0098D7; margin:5px;"></i>Symposiums, seminars and workshops are arranged and conducted regularly to have the students well informed of the latest happenings in the world   </p> 
+               <br><p><spam  data-aos="fade-left" data-aos-delay="100" data-aos-duration="1000"> <i class="fa fa-arrow-alt-circle-right mr-2" style="color:#0098D7; margin:5px;"></i>Debates, elocution and quiz competitions are organized frequently to enable the children to improve their knowledge, thinking and assessing skills   </p> 
+               <br><p><spam  data-aos="fade-left" data-aos-delay="100" data-aos-duration="1000"> <i class="fa fa-arrow-alt-circle-right mr-2" style="color:#0098D7; margin:5px;"></i>Foundation and Bridge Courses are provided for different competitive examinations and Olympiads   </p> 
+               <br><p><spam  data-aos="fade-left" data-aos-delay="100" data-aos-duration="1000"> <i class="fa fa-arrow-alt-circle-right mr-2" style="color:#0098D7; margin:5px;"></i>Exposure to the various activities of the United Nations to enable them to understand their utility, the role of every individual innation building and participation.   </p> 
+         </div>
+<br>
+    
+    <div class="row row-1" id="parent"  data-aos="fade-down" data-aos-delay="200"  data-aos-duration="1000">
+        <div class="col-sm-12">
+            <br>
+            <center><h3>Evaluation System</h3></center>
+        </div>
+         <br><p><spam  data-aos="fade-left" data-aos-delay="100" data-aos-duration="1000"> <i class="fa fa-arrow-alt-circle-right mr-2" style="color:#0098D7; margin:5px;"></i>We at Bhavana Public School believe that motive of the evaluation system is analysing the student thoroughly for the feedback and it was discussed individually with the parents in PTM.</p> 
+         <br><p><spam  data-aos="fade-left" data-aos-delay="100" data-aos-duration="1000"> <i class="fa fa-arrow-alt-circle-right mr-2" style="color:#0098D7; margin:5px;"></i>4 Evaluations for Grade I to V. </p>  
+         <br><p><spam  data-aos="fade-left" data-aos-delay="100" data-aos-duration="1000"> <i class="fa fa-arrow-alt-circle-right mr-2" style="color:#0098D7; margin:5px;"></i>First Term and one annual Exam per academic year for Grade VI to VIII with 2 periodic tests- each in one term </p>  
+         <br><p><spam  data-aos="fade-left" data-aos-delay="100" data-aos-duration="1000"> <i class="fa fa-arrow-alt-circle-right mr-2" style="color:#0098D7; margin:5px;"></i>Pre Mid Term, Mid Term, Post Mid Term and Final Exam for Grade IX and X with weekly and monthly exam. For X & XII- Pre annual exams with the chapter wise last ten years board question papers is solving during this special classes. </p>  
+         <br><p><spam  data-aos="fade-left" data-aos-delay="100" data-aos-duration="1000"> <i class="fa fa-arrow-alt-circle-right mr-2" style="color:#0098D7; margin:5px;"></i>only 35-40 students per class enable teacher to pay individual attention to wards the students. </p>  
+         <br><p><spam  data-aos="fade-left" data-aos-delay="100" data-aos-duration="1000"> <i class="fa fa-arrow-alt-circle-right mr-2" style="color:#0098D7; margin:5px;"></i>With the help of Breadth and Balance, we are getting the exact subject knowledge which should be accepted by the students in particular class. </p>  
+         <br><p><spam  data-aos="fade-left" data-aos-delay="100" data-aos-duration="1000"> <i class="fa fa-arrow-alt-circle-right mr-2" style="color:#0098D7; margin:5px;"></i>In the Question Paper Analysis- each and every students Answer sheet should be analyzed. It helps us to know the performance status of the child for each question and its concept. If the maximum students concept is not clear, it is re-teach in the class. Usage of audio- visual software and teaching aids clear the students’ concepts. </p>  
+         <br><p><spam  data-aos="fade-left" data-aos-delay="100" data-aos-duration="1000"> <i class="fa fa-arrow-alt-circle-right mr-2" style="color:#0098D7; margin:5px;"></i>Student centered daily assembly includes prayer, pledge, thought, on the character building sentences, News, quiz, activities and value based message by Principal and Teacher. </p>  
+         <br><p><spam  data-aos="fade-left" data-aos-delay="100" data-aos-duration="1000"> <i class="fa fa-arrow-alt-circle-right mr-2" style="color:#0098D7; margin:5px;"></i>Always classroom supervision by school management committee through Principal  ,Vice Principal  & Academic Coordinators, Subject HODs . </p>  
+    </div>
+
+<br>
+    
+    
+    <div class="row row-1" id="rules"  data-aos="fade-down" data-aos-delay="200"  data-aos-duration="1000">
+        <div class="col-sm-12">
+            <br>
+            <center><h3>Sports & Performing Arts</h3></center>
+        </div>
+         <br><p><spam  data-aos="fade-left" data-aos-delay="100" data-aos-duration="1000"> <i class="fa fa-arrow-alt-circle-right mr-2" style="color:#0098D7; margin:5px;"></i>SPA is an integral part of the curriculum and we offer array of Indoor and outdoor activities for physical development of child. Special emphasis is given on inculcating team spirit, impede spirit and leadership skills that lead to character building and balanced personality. Apart from these varieties of indoor and outdoor games and sports, aerobics, athletics, yoga, music, speech, dance and drama are also included in SPA.</p> 
+        <br>
+    </div>
+
+
+
+</div>
+
+{% endblock body_content %}

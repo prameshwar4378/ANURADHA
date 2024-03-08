@@ -1,0 +1,149 @@
+<html>
+{% load static %}
+<head>
+	<link href=
+'https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/ui-darkness/jquery-ui.css'
+		rel='stylesheet'>
+</head>
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<meta content="Free HTML Templates" name="keywords">
+<meta content="Free HTML Templates" name="description">
+
+
+ <!-- bootstrap links -->
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+ <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+ <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+
+	<style>
+
+		#cal a:hover{
+			color:  2022rgb(255, 255, 255);
+			background: rgb(5, 80, 193);
+		}
+		
+            
+    .div_scroll{
+      height:650px;
+      overflow-x:scroll;
+      overflow-y:scroll;
+  }
+  img{
+    width:100%;
+  }
+
+  @media screen and (max-width: 770px){
+    .div_scroll{
+      height:550px;
+  }
+}
+	</style>
+<body>
+	<br>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-sm-2 text-center">
+				<a href="{% url 'school_times' %}" class="btn btn-info"><i class="fa fa-arrow-alt-circle-left mr-2"></i> Back</a>
+				<a href="{% url 'index' %}" class="btn btn-info"><i class="fa fa-arrow-alt-circle-left mr-2"></i> Home</a>
+				<br>
+				<br>
+			</div>
+			<div class="col-sm-10">
+				<center><h2>BPS ACADEMIC CALENDER 2022</h2></center>
+			</div>
+		</div>
+	</div>
+	<br>
+	<div id="cal">
+		<ul>
+
+			<li><a style="width:200px" href="#January">January</a></li>
+			<li><a style="width:200px" href="#February">February</a></li>
+			<li><a style="width:200px" href="#March">March</a></li>
+			<li><a style="width:200px" href="#April">April</a></li>
+			<li><a style="width:200px" href="#May">May</a></li>
+			<li><a style="width:200px" href="#June">June</a></li><br><br>
+			<li><a style="width:200px" href="#July">July</a></li>
+			<li><a style="width:200px" href="#August">August</a></li>
+			<li><a style="width:200px" href="#September">September</a></li>
+			<li><a style="width:200px" href="#October">October</a></li>
+			<li><a style="width:200px" href="#November">November</a></li>
+			<li><a style="width:200px" href="#December">December</a></li>
+		</ul>
+
+		<div id='January' class="div_scroll">
+            <center><h2>January 2022</h2></center>
+			    <img src="{% static 'img/months/01.jpg' %}" alt="">
+		</div>
+
+		<div id='February' class="div_scroll">
+            <center><h2>February 2022</h2></center>
+			    <img src="{% static 'img/months/02.jpg' %}" alt="">
+		</div>
+
+		<div id='March' class="div_scroll">
+            <center><h2>March 2022</h2></center>
+			    <img src="{% static 'img/months/03.jpg' %}" alt="">
+		</div>
+
+		<div id='April' class="div_scroll">
+            <center><h2>April 2022</h2></center>
+			    <img src="{% static 'img/months/04.jpg' %}" alt="">
+		</div>
+
+		<div id='May' class="div_scroll">
+            <center><h2>May 2022</h2></center>
+			    <img src="{% static 'img/months/05.jpg' %}" alt="">
+		</div>
+
+		<div id='June' class="div_scroll">
+            <center><h2>June 2022</h2></center>
+			    <img src="{% static 'img/months/06.jpg' %}" alt="">
+		</div>
+
+		<div id='July' class="div_scroll">
+            <center><h2>July 2022</h2></center>
+			    <img src="{% static 'img/months/07.jpg' %}" alt="">
+		</div>
+
+		<div id='August' class="div_scroll">
+            <center><h2>August 2022</h2></center>
+			    <img src="{% static 'img/months/08.jpg' %}" alt="">
+		</div>
+
+		<div id='September' class="div_scroll">
+            <center><h2>September 2022</h2></center>
+			    <img src="{% static 'img/months/09.jpg' %}" alt="">
+		</div>
+
+		<div id='October' class="div_scroll">
+            <center><h2>October 2022</h2></center>
+			    <img src="{% static 'img/months/10.jpg' %}" alt="">
+		</div>
+
+		<div id='November' class="div_scroll">
+            <center><h2>November 2022</h2></center>
+			    <img src="{% static 'img/months/11.jpg' %}" alt="">
+		</div>
+
+		<div id='December' class="div_scroll">
+            <center><h2>December 2022</h2></center>
+			    <img src="{% static 'img/months/12.jpg' %}" alt="">
+		</div>
+
+	</div>
+	<script src= "https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js">
+	</script>
+	<script src= "https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js">
+	</script>
+	<script>
+		$(document).ready(function() {
+			$("#cal").tabs({
+					active: 0
+				})
+		})
+	</script>
+
+</body>
+
+</html>

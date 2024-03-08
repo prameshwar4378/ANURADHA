@@ -1,0 +1,96 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block style %}
+.general-info-header{
+height: 300px;
+width: 98%;
+background-image: linear-gradient(to top, #064B7B , #0098D7);
+margin-top: 8px;
+border-radius: 10px;
+}
+.general-info-header .waves_img{
+    height: auto;
+    width: 100%;
+    position: relative;
+    transform: translateY(2rem);
+
+}
+@media screen and (max-width: 770px){
+    .general-info-header .waves_img{
+    height: auto;
+    width: 100%;
+    position: relative;
+    transform: translateY(1rem);
+} 
+}
+
+
+.banner-btn a{
+    border-radius: 8px;
+	width: 170px;
+	text-decoration: none;
+	display: inline-block;
+	margin: 0 10px;
+	padding: 12px 0;
+	color: #0098D7;
+    background-color: rgb(255, 255, 255);
+	border: 1px solid rgb(255, 255, 255);
+	position: relative;
+	z-index: 1;
+	transition: color 0.5s;
+	margin-top: 10px;
+    font-weight: bold;
+}
+
+.banner-btn a span{
+width: 0%;
+height: 100%;
+position: absolute;
+top: 0;
+left: 0;
+background: linear-gradient(to right, #064B7B , #0098D7);
+z-index: -1;
+transition: 0.5s;
+}
+.banner-btn a:hover span{
+    border-radius: 8px;
+	width: 100%
+}
+.banner-btn a:hover{
+	color:rgb(255, 255, 255);
+}
+
+
+{% endblock style %}
+
+
+
+{% block body_content %}
+    <!-- About Header Buttons Start -->
+    <center> <div class="general-info-header">
+        <div class="banner-btn">
+            <a href="{% url 'infrastructure' %}"   data-aos="fade-down" data-aos-delay="50"  data-aos-duration="1000"> <span></span> Infrastructure &nbsp;&nbsp;</a>
+            <a href="{% url 'hostel' %}"  data-aos="fade-down" data-aos-delay="100"  data-aos-duration="1000"> <span></span>Hostel &nbsp;&nbsp;</a>
+            <a href="#" style="margin-top: -28px; color: white; background: linear-gradient(to right, #064B7B , #0098D7);"  data-aos="fade-down" data-aos-delay="150"  data-aos-duration="1000"> <span></span>Library &nbsp;&nbsp;</a>
+            <a href="{% url 'computer_lab' %}"   data-aos="fade-down" data-aos-delay="200"  data-aos-duration="1000"> <span></span>Computer Lab &nbsp;&nbsp;</a><br>
+            <a href="{% url 'smart_classes' %}"  data-aos="fade-down" data-aos-delay="250"   data-aos-duration="1000"> <span></span>Smart Classes &nbsp;&nbsp;</a>
+            <a href="{% url 'news_papper' %}"  data-aos="fade-down" data-aos-delay="300"  data-aos-duration="1000"> <span></span>News Papper&nbsp;&nbsp;</a>
+            <a href="{% url 'transportations' %}"  data-aos="fade-down" data-aos-delay="350"  data-aos-duration="1000"> <span></span>Transportation&nbsp;&nbsp;</a>
+        </div>
+     <img src="{% static 'img/waves.png' %}" alt="" class="waves_img">
+    </div>
+</center> 
+    <!-- About Header Buttons Stop -->
+
+<br>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+<center><h2>This is Library Page</h2></center>
+        </div>
+    </div>
+</div>
+
+{% endblock body_content %}

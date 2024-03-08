@@ -1,0 +1,91 @@
+{% extends "admin_base.html" %}
+{% block content %}
+ 
+<main id="main" class="main">
+
+    <div class="pagetitle">
+        <h1>Enquiry List</h1>
+         
+    </div><!-- End Page Title -->
+
+    <section class="section dashboard">
+        <div class="row">
+
+            <!-- Left side columns -->
+            <div class="col-lg-12">
+                <div style="padding:2%" >
+                    <!-- Left side columns -->
+                    <div  >
+                            <div class="" style="overflow:scroll;">
+                                <table id="example" class="table table-striped " style="overflow:scroll; width:100%; min-width: max-content;">
+                                    <thead>
+                                        <tr style="background:#02B4C3;">
+                                                <th scope="col" class="text-center text-white" style="">Sr.No</th> 
+                                                <th scope="col" class="text-center text-white" style="">Full Name</th> 
+                                                <th scope="col" class="text-center text-white" style="">mobile</th>
+                                                <th scope="col" class="text-center text-white" style="">Subject</th>
+                                                <th scope="col" class="text-center text-white" style="">Date Time</th>
+                                                <th scope="col" class="text-center text-white" style="">Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {% if rec %}
+                                        {% for r in rec %}
+                                        <tr>
+                                            <td>{{forloop.counter}}</td>
+                                            <td>{{r.first_name}} {{r.last_name}}</td>
+                                            <td>{{r.mobile}}</td>
+                                            <td>{{r.subject|slice:15}}...</td>
+                                            <td> {{r.date}} </td>
+                                            <td>
+                                            <center>
+                                                <a href="{% url "enquiry_details" r.id %}" class="btn btn-primary px-3">Read More</a>    
+                                                <a href="{% url "delete_enquiry" r.id %}" class="btn btn-danger px-3">Delete</a>    
+                                            </center>
+                                            </td>
+                                        </tr>
+                                        {% endfor %}
+                                        {% else %} 
+                                        {% endif %}
+                                    </tbody>
+                                </table>
+                            </div>
+                
+                    </div>
+                </div><!-- End Left side columns -->
+                
+                 
+                <!-- Add DataTables JavaScript -->
+                <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+                
+                <script>
+                    $(document).ready(function() {
+                        $('#example').DataTable({
+                            "pageLength": 10, // Number of records per page
+                            "ordering": true, // Enable sorting
+                            "searching": true // Enable searching
+                            // More options can be added here
+                        });
+                    });
+                </script>
+                </script>
+                <script>
+                    
+                <script>
+                // Get the element by its id
+                var myInput = document.getElementById("enquiry");
+                // Add a class to the element
+                myInput.classList.add("active");
+                  </script>
+                </script>
+            </div>
+        </div><!-- End Left side columns -->
+
+    </section>
+
+
+</main><!-- End #main -->
+
+
+{% endblock content %}
+ 

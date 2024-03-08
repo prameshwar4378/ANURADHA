@@ -1,0 +1,67 @@
+{% extends 'admin_panel/admin_base.html' %}
+{% load crispy_forms_tags %}
+{% block style %}
+#id_solution_description{
+    height:65px;
+}
+.text_align{
+    text-align:right;
+}
+
+@media screen and (max-width: 770px){
+    .text_align{
+        text-align:left;
+    }
+    
+    }
+{% endblock style %}
+{% block Home %}
+
+<br>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <h4 class="text-center alert alert-dark mt-2"><b> Resolve Enquiry </b></h4>
+        </div>
+    </div>
+    <div class="row">
+    <div class="col-sm-2 text_align"><p class="alert alert-danger"><b>Name :</b> </p></div>
+    <div class="col-sm-10"><p class="alert alert-danger">{{rec.full_name}}</p></div>
+    </div>
+    <div class="row">
+    <div class="col-sm-2 text_align"><p class="alert alert-danger"><b>Email :</b> </p></div>
+    <div class="col-sm-10"><p class="alert alert-danger">{{rec.email}}</p></div>
+    </div>
+    <div class="row">
+    <div class="col-sm-2 text_align"><p class="alert alert-danger"><b>Mobile :</b> </p></div>
+    <div class="col-sm-10"><p class="alert alert-danger">{{rec.mobile}}</p></div>
+    </div>
+    <div class="row">
+    <div class="col-sm-2 text_align"><p class="alert alert-danger"><b>Subject :</b> </p></div>
+    <div class="col-sm-10"><p class="alert alert-danger">{{rec.subject}}</p></div>
+    </div>
+    <div class="row">
+    <div class="col-sm-2 text_align"><p class="alert alert-danger"><b>Message :</b> </p></div>
+    <div class="col-sm-10"><p class="alert alert-danger">{{rec.message}}</p></div>
+    </div>
+
+{% comment %} 
+    <div class="row">
+        <div class="col-sm-12">
+            <form action="" method="POST">  {% csrf_token %}
+            {{fm.solved_or_not|as_crispy_field}}
+            {{fm.solution_description|as_crispy_field}}
+            {{fm.message|as_crispy_field}}
+         <center>   <input type="submit" value="Update" class="btn btn-danger"><br><br></center>
+            </form>
+        </div>
+    </div> {% endcomment %}
+</div>
+  
+    
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init();
+  </script>
+
+{% endblock Home %}

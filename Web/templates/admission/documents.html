@@ -1,0 +1,153 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block style %}
+.admission-header{
+    height: 240px;
+    width: 98%;
+    background-image: linear-gradient(to top, #064B7B , #0098D7);
+    margin-top: 8px;
+    border-radius: 10px;
+    }
+    .admission-header .waves_img{
+        height: auto;
+        width: 100%;
+        position: relative;
+        transform: translateY(2rem);
+    }
+    
+    @media screen and (max-width: 770px){
+        .admission-header{
+            border-radius:0px 0px 50px 50px;
+            height:180px;
+        }
+        .admission-header .waves_img{
+        height: auto;
+        width: 100%;
+        position: relative;
+        transform: translateY(1rem);
+        display:none;
+    } 
+    
+    }
+    
+    
+    .banner-btn a{
+        border-radius: 8px;
+        width: 170px;
+        text-decoration: none;
+        display: inline-block;
+        margin: 0 10px;
+        padding: 12px 0;
+        color: #0098D7;
+        background-color: rgb(255, 255, 255);
+        border: 1px solid rgb(255, 255, 255);
+        position: relative;
+        z-index: 1;
+        transition: color 0.5s;
+        margin-top: 10px;
+        font-weight: bold;
+    }
+    
+    .banner-btn a span{
+    width: 0%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: linear-gradient(to right, #064B7B , #0098D7);
+    z-index: -1;
+    transition: 0.5s;
+    }
+    .banner-btn a:hover span{
+        border-radius: 8px;
+        width: 100%
+    }
+    .banner-btn a:hover{
+        color:rgb(255, 255, 255);
+    }
+    @media screen and (max-width: 400px) {
+        .banner-btn a {
+          font-size: 12px;
+          width: 130px;
+        }
+      } 
+
+    
+
+
+
+   
+
+
+
+
+
+.container-1{
+    background-color:white;
+    box-shadow:0px 0px 10px;
+    padding:20px;
+    border-radius:50px;
+}
+.row-1{
+    box-shadow:0px 0px 10px;
+    border-radius:5px;
+    margin:10px;
+    padding:5px;
+}
+h2{
+    text-align:center;
+    color:#0098D7
+}
+
+
+
+.table_scroll{
+    height:300px;
+    overflow-x:scroll;
+    overflow-y:scroll;
+}
+.table{
+  min-width: max-content;
+}
+th{
+  background-color: #0098D7;
+}
+
+
+{% endblock style %}
+
+
+
+{% block body_content %}
+    <!-- About Header Buttons Start -->
+    <center> <div class="admission-header">
+        <div class="banner-btn">
+          <a href="{% url 'age_criteria' %}" data-aos="fade-down" data-aos-delay="100"  data-aos-duration="1000"> <span></span> Age Limit &nbsp;&nbsp;</a> 
+          <a href="#"  style="margin-top: -28px; color: white; background: linear-gradient(to right, #064B7B , #0098D7);"   data-aos="fade-down" data-aos-delay="100"  data-aos-duration="1000"> <span></span> Documents &nbsp;&nbsp;</a>
+            <a href="{% url 'guidlines' %}"  data-aos="fade-down" data-aos-delay="150"  data-aos-duration="1000"> <span></span> Guidlines &nbsp;&nbsp;</a>
+            <a href="{% url 'withdrawal' %}"   data-aos="fade-down" data-aos-delay="200"  data-aos-duration="1000"> <span></span>Withdrawal &nbsp;&nbsp;</a>
+        </div>
+     <img src="{% static 'img/waves.png' %}" alt="" class="waves_img">
+    </div>
+</center> 
+    <!-- About Header Buttons Stop -->
+
+
+<br>
+<div class="container bg-light container-1">
+    <h2  data-aos="fade-down" data-aos-delay="50" data-aos-duration="500">Documents </h2>
+    <hr  data-aos="zoom-in" data-aos-delay="400" data-aos-duration="1000"><br>
+    <div class="row" style="text-align:left;"  data-aos="fade-right" data-aos-delay="50" data-aos-duration="1000">
+        <span style="text-align:left">
+        <p><b>  <i class="fa fa-arrow-alt-circle-right mr-2" style="color:#0098D7; margin:5px;"></i> </b>  Transfer Certificate</p>
+        <p><b>  <i class="fa fa-arrow-alt-circle-right mr-2" style="color:#0098D7; margin:5px;"></i> </b> School NOC </p>
+        <p><b>  <i class="fa fa-arrow-alt-circle-right mr-2" style="color:#0098D7; margin:5px;"></i> </b> CBSE Affiliation  </p>
+        <p><b>  <i class="fa fa-arrow-alt-circle-right mr-2" style="color:#0098D7; margin:5px;"></i> </b> Land Certificate </p>
+        <p><b>  <i class="fa fa-arrow-alt-circle-right mr-2" style="color:#0098D7; margin:5px;"></i> </b> Fire Safety Certificate </p>
+        <p><b>  <i class="fa fa-arrow-alt-circle-right mr-2" style="color:#0098D7; margin:5px;"></i> </b> Water Safety Certificate </p>
+    </span>
+    </div>
+</div>
+
+{% endblock body_content %}

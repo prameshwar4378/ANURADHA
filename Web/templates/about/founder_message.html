@@ -1,0 +1,205 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block style %}
+.general-info-header{
+    height: 300px;
+    width: 98%;
+    background-image: linear-gradient(to top, #064B7B , #0098D7);
+    margin-top: 8px;
+    border-radius: 10px;
+    }
+    .general-info-header .waves_img{
+        height: auto;
+        width: 100%;
+        position: relative;
+        transform: translateY(2rem);
+    
+    }
+
+    @media screen and (max-width: 770px){
+        .general-info-header{
+            height:250px;
+            border-radius:0px 0px 50px 50px;
+        }
+        .general-info-header .waves_img{
+        width: 100%;
+        position: relative;
+        transform: translateY(1rem);
+        display:none;
+    } 
+    
+    .inner-class{
+        border-radius:10px;
+        box-shadow:0px 0px 10px;
+        padding:7px;
+    }
+    h4{
+        margin-top:15px;
+        text-align:center;
+    }
+    }
+    
+    
+    .banner-btn a{
+        border-radius: 8px;
+        width: 170px;
+        text-decoration: none;
+        display: inline-block;
+        margin: 0 10px;
+        padding: 12px 0;
+        color: #0098D7;
+        background-color: rgb(255, 255, 255);
+        border: 1px solid rgb(255, 255, 255);
+        position: relative;
+        z-index: 1;
+        transition: color 0.5s;
+        margin-top: 10px;
+        font-weight: bold;
+    }
+    
+    .banner-btn a span{
+    width: 0%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: linear-gradient(to right, #064B7B , #0098D7);
+    z-index: -1;
+    transition: 0.5s;
+    }
+    .banner-btn a:hover span{
+        border-radius: 8px;
+        width: 100%
+    }
+    .banner-btn a:hover{
+        color:rgb(255, 255, 255);
+    }
+
+    @media screen and (max-width: 400px) {
+        .banner-btn a {
+          font-size: 12px;
+          width: 130px;
+        }
+      } 
+
+
+
+
+
+
+
+
+
+.principal-message{
+    margin-top:14px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px;
+}
+
+.principal-message .profile{
+    width: 15rem;
+    border-radius: 100%;
+    border:6px solid white;
+    box-shadow:5px 5px 10px;
+}
+
+
+@media screen and (max-width: 770px){
+
+    .principal-message{
+        margin-top:14px;
+        border-radius: 40px;
+        box-shadow: 0px 0px 10px;
+    }
+}
+
+{% endblock style %}
+
+
+
+{% block body_content %}
+    <!-- About Header Buttons Start -->
+    <center> <div class="general-info-header">
+        <div class="banner-btn">
+            <a href="{% url 'school_info' %}" style="margin-top: -28px;"  data-aos="fade-down" data-aos-delay="150" data-aos-duration="1000"> <span></span>School Info &nbsp;&nbsp;</a>
+            <a href="{% url 'tatya_saheb_message' %}"   data-aos="fade-down" data-aos-delay="250" data-aos-duration="1000"> <span></span>Tatya Saheb MSG &nbsp;&nbsp;</a>
+            <a href="#" style="margin-top: -28px; color: white; background: linear-gradient(to right, #064B7B , #0098D7);"   data-aos="fade-down" data-aos-delay="100" data-aos-duration="1000"> <span></span>Founder Message &nbsp;&nbsp;</a>
+            <a href="{% url 'principal_message' %}"  data-aos="fade-down" data-aos-delay="100" data-aos-duration="1000"> <span></span>Principal Message &nbsp;&nbsp;</a>
+            <br>
+            <a href="{% url 'vision_and_mission' %}"   data-aos="fade-down" data-aos-delay="200" data-aos-duration="1000"> <span></span>Vision And Mission &nbsp;&nbsp;</a>
+            <a href="{% url 'phylosophy' %}"  data-aos="fade-down" data-aos-delay="300" data-aos-duration="1000"> <span></span>Our Phylosophy&nbsp;&nbsp;</a>
+            <!-- 
+            <a href="{% url 'alumni' %}"   data-aos="fade-down" data-aos-delay="50" data-aos-duration="1000"> <span></span> Alumni &nbsp;&nbsp;</a>
+            <a href="{% url 'school_location' %}"   data-aos="fade-down" data-aos-delay="250" data-aos-duration="1000"> <span></span>Location &nbsp;&nbsp;</a>
+           -->
+            <a href="{% url 'chikhli_city' %}"   data-aos="fade-down" data-aos-delay="250" data-aos-duration="1000"> <span></span>Chilkhli City &nbsp;&nbsp;</a>
+      </div>
+     <img src="{% static 'img/waves.png' %}" alt="" class="waves_img">
+    </div>
+</center> 
+    <!-- About Header Buttons Stop -->
+
+<br>
+
+<div class="container bg-light" data-aos="fade-down" data-aos-delay="50">
+    <div class="row">
+        <div class="col-sm-12 principal-message">
+            <br>
+            <center> <img src="{% static 'images/rahul.png' %}" alt="" class="profile" data-aos="fade-down" data-aos-delay="50" data-aos-duration="1000">
+                <br>
+                <br>
+                <h2 style="color:#0098D7;" data-aos="fade-in" data-aos-delay="100">Rahul Siddhivinayak Bondre </h2>
+            </center>
+            <br>
+            <div class="inner-class">
+                <h4 style="color:#0098D7; margin-bottom:-7px;" data-aos="fade-in" data-aos-delay="100"> Founder & chairperson of </h4>
+            <br><spam data-aos="fade-down" data-aos-delay="200"> <i class="fa fa-chevron-circle-right mr-2" style="color:#0098D7; margin:5px;"></i> Anuradha English Medium School </spam>
+            <br><spam data-aos="fade-down" data-aos-delay="200"> <i class="fa fa-chevron-circle-right mr-2" style="color:#0098D7; margin:5px;"></i>GIRLS SPORTS ASSOCIATION</spam>
+            <br><spam data-aos="fade-down" data-aos-delay="200"> <i class="fa fa-chevron-circle-right mr-2" style="color:#0098D7; margin:5px;"></i>Paramhans Ramkrishna Maunibaba shikshan sansthan</spam>
+            <br><spam data-aos="fade-down" data-aos-delay="200"> <i class="fa fa-chevron-circle-right mr-2" style="color:#0098D7; margin:5px;"></i>Anuradha Group of Institute </spam>
+            <br><spam data-aos="fade-down" data-aos-delay="200"> <i class="fa fa-chevron-circle-right mr-2" style="color:#0098D7; margin:5px;"></i>Ex MLA of Chikhli constituency (2009 - 2019) </spam>
+            <br><spam data-aos="fade-down" data-aos-delay="200"> <i class="fa fa-chevron-circle-right mr-2" style="color:#0098D7; margin:5px;"></i>ASMITA AWARD WINNER </spam>
+                <br><br> 
+            <p style="text-align: justify; margin:10px;" data-aos="fade-down" data-aos-delay="50">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   ANURADHA ENGLISH MEDIUM SCHOOL, Chikhli, was established by Karmyogi Tatyasheb Bondre , under the aegis of the society of Paramhans Ramkrishna Maunibaba shikshan Sansthan,  August 10th  -  2003, with a commitment to pay his dues to Chikhli and a vision to provide holistic education with international standards  with Indian values for the children of Chikhli and its surrounding areas. <br><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  The school is situated in a 15 acre lush green campus on the outskirts of Chikhli , in a serene atmosphere, free from pollution, to enable the children to discover their true potential and acquire the requisite skills. The multi-storied school building provides all the modern amenities which include a multipurpose hall equipped with LCD and audio-video system, library, reading room, smart classrooms, indoor & outdoor sports facilities, science labs, mathematics lab, RO water purifier with cooler, hygienic toilets for boys and girls in each floor. <br><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  The School is day boarding co-ed school from Grade 1st  to Grade 10th  . We are affiliated to the CBSE Delhi vide affiliation No. 1130855. We believe in holistic approach towards over all development of the child by imparting quality education complimented by lovely campus in natural setting with grand infrastructure supported by a strong co – curricular programme which includes sports, visual and performing arts, leadership opportunities through diversified programme. We focus on grooming the students as a confident and independent individuals who are prepared for the real world and ready for the future.
+            </p>
+                <br>
+            </div>
+            <br><br>
+            </div>
+    </div>
+ 
+</div>
+
+<br>
+
+
+<div class="container bg-light" data-aos="fade-down" data-aos-delay="50" data-aos-duration="1000">
+    <div class="row ">
+        <div class="col-sm-12 principal-message">
+            <br>
+            <div class="inner-class">
+            <h4 style="color:#0098D7; margin-bottom:-7px;" data-aos="fade-in" data-aos-delay="100"> Message </h4>
+          
+            <p style="text-align: justify; margin:10px;" data-aos="fade-down" data-aos-delay="50">
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   The purpose of education is to ignite a spirit of inquiry, creativity, a thirst for knowledge, striving for excellence, character-building, self-development as well as cultivate good habits to last a life-time. Anuradha English Medium School, Chikhli strives tirelessly to mentor its students to realize their potential and develop confidence to face the future challenges in a fiercely competitive world moving at an accelerated pace. <br><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Every child is like a seed which has the potential to grow if it is nourished with love and care under the right guidance. ANURADHA ENGLISH MEDIUM SCHOOL, Chikhli is a child friendly school where each and every child is understood and valued. Personal attention is given to the development of children in all spheres; academics, sports and cultural. <br><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; It is our constant endeavor to groom our children for life; making those well - rounded individuals who will be able to contribute to the society they live in, who shall set out to leave the world a better place than what they find it to be.
+                We are always open for new ideas and suggestions which can add more value.
+            </p>
+                <br>
+               <spam style="text-align:right; padding-right:-100px;" data-aos="zoom-in" data-aos-delay="200" data-aos-duration="1400"> <h5> Rahulbhau Bondre  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h5> 
+                        <p>Founder &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p> 
+            </spam>
+            </div>
+            <br><br>
+            </div>
+    </div>
+ 
+</div>
+
+
+{% endblock body_content %}

@@ -1,0 +1,96 @@
+{% extends "admin_base.html" %}
+
+
+{% block content %}
+
+<main id="main" class="main">
+
+    <div class="pagetitle">
+        <h1>Enquiry Details</h1>
+         
+    </div><!-- End Page Title -->
+
+    <section class="section dashboard">
+        <div class="row">
+
+            <!-- Left side columns -->
+            <div class="col-lg-12">
+                <style>
+                    h5{
+                        font-size:15px;
+                    }
+                </style>
+                
+                
+                
+                <div class="container" style="padding:2%" >
+                    <!-- Left side columns -->
+                    <div  >
+                            <div class=""  >
+                                <div class="row">
+                                    <div class="col-sm-4  py-3 mb-1">
+                                        <div style="background:white; padding:10px;  border-radius:10px; box-shadow:0px 0px 10px -5px;">
+                                            <span style="color:gray;">Name</span>
+                                            <hr style="margin:4px; margin-bottom:10px;">
+                                            <h5>{{data.first_name}} {{data.last_name}}</h5>
+                                        </div>
+                                    </div>
+                    
+                                    <div class="col-sm-4  py-3 mb-1">
+                                        <div style="background:white; padding:10px;  border-radius:10px; box-shadow:0px 0px 10px -5px;">
+                                            <span style="color:gray;">Email</span>
+                                            <hr style="margin:4px; margin-bottom:10px;">
+                                            <h5>{{data.email}}</h5>
+                                        </div>
+                                    </div>
+                    
+                                    <div class="col-sm-4  py-3 mb-1">
+                                        <div style="background:white; padding:10px;  border-radius:10px; box-shadow:0px 0px 10px -5px;">
+                                            <span style="color:gray;">Mobile</span>
+                                            <hr style="margin:4px; margin-bottom:10px;">
+                                            <h5>{{data.mobile}}</h5>
+                                        </div>
+                                    </div>
+                     
+                                </div>
+                    
+                                <div class="row">
+                                    <div class="col-sm-12  py-3 mb-1">
+                                        <div style="background:white; padding:10px;  border-radius:10px; box-shadow:0px 0px 10px -5px;">
+                                            <span style="color:gray;">Subject</span>
+                                            <hr style="margin:4px; margin-bottom:10px;">
+                                            <h5>{{data.subject}}</h5>
+                                        </div>
+                                    </div>
+                    
+                                </div>
+                    
+                                <div class="row ">
+                                    <div class="col-sm-12  py-3 mb-1">
+                                        <div
+                                            style="background:white; text-align:justify; padding:10px;  border-radius:10px; box-shadow:0px 0px 10px -5px;">
+                                            <span style="color:gray;">Message</span>
+                                            <hr style="margin:4px; margin-bottom:10px;">
+                                            <h5 class="text-justify">
+                                                {{data.message}}</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                    
+                            </div>
+                
+                    </div>
+                </div><!-- End Left side columns -->
+                
+                 
+            </div>
+        </div><!-- End Left side columns -->
+
+    </section>
+
+
+</main><!-- End #main -->
+
+
+{% endblock content %}
+ 

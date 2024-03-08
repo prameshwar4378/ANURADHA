@@ -1,0 +1,292 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block style %}
+.general-info-header{
+    height: 300px;
+    width: 98%;
+    background-image: linear-gradient(to top, #064B7B , #0098D7);
+    margin-top: 8px;
+    border-radius: 10px;
+    }
+    .general-info-header .waves_img{
+        height: auto;
+        width: 100%;
+        position: relative;
+        transform: translateY(2rem);
+    
+    }
+
+    @media screen and (max-width: 770px){
+        .general-info-header{
+            height:250px;
+            border-radius:0px 0px 50px 50px;
+        }
+        .general-info-header .waves_img{
+        width: 100%;
+        position: relative;
+        transform: translateY(1rem);
+        display:none;
+    } 
+    
+    .inner-class{
+        border-radius:10px;
+        box-shadow:0px 0px 10px;
+        padding:7px;
+    }
+    h4{
+        margin-top:15px;
+        text-align:center;
+    }
+    }
+    
+    
+    .banner-btn a{
+        border-radius: 8px;
+        width: 170px;
+        text-decoration: none;
+        display: inline-block;
+        margin: 0 10px;
+        padding: 12px 0;
+        color: #0098D7;
+        background-color: rgb(255, 255, 255);
+        border: 1px solid rgb(255, 255, 255);
+        position: relative;
+        z-index: 1;
+        transition: color 0.5s;
+        margin-top: 10px;
+        font-weight: bold;
+    }
+    
+    .banner-btn a span{
+    width: 0%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: linear-gradient(to right, #064B7B , #0098D7);
+    z-index: -1;
+    transition: 0.5s;
+    }
+    .banner-btn a:hover span{
+        border-radius: 8px;
+        width: 100%
+    }
+    .banner-btn a:hover{
+        color:rgb(255, 255, 255);
+    }
+
+    @media screen and (max-width: 400px) {
+        .banner-btn a {
+          font-size: 12px;
+          width: 130px;
+        }
+      } 
+
+
+
+
+      
+
+.container-1{
+    background:white;
+    padding:40px;
+    box-shadow:0px 0px 10px;
+    border-radius:40px;
+}
+
+h3{
+    text-align:center;
+    background-color:#0098D7;
+    color:white;
+}
+h2{
+    text-align:center;
+    color:#0098D7;
+}
+hr{
+    width:150px;
+    height:4px;
+    border-width:0;
+    color:#0098D7;
+    background-color:#0098D7;
+
+}
+.row-rail{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+    
+}
+.rail-img{
+    width:45%;
+}
+.div-rail-text{
+    background-color:white;
+    padding:20px;
+    border:5px solid white;
+    opacity:0.7;
+    border-radius:5px;
+    margin:10px;
+
+}
+.rail-text{
+    width:85%;
+    
+}
+.div-rail-text{ 
+    padding:5px; 
+
+}
+
+@media screen and (max-width: 770px)
+{
+    .container-1{
+        padding:2px;
+    }
+}
+
+.railway{
+    background-image:url('{% static 'images/railway-desktop.jpg' %}')
+}
+
+.road{
+    background-image:url('{% static 'images/highway-desktop.jpg' %}')
+}
+
+.air{
+    background-image:url('{% static 'images/air-desktop.jpg' %}')
+}
+.aggriculture{
+    background-image:url('{% static 'images/aggriculture-desktop.jpg' %}')
+}
+
+
+@media screen and (max-width: 770px){
+
+    .railway{
+        background-image:url('{% static 'images/railway-mobile.jpg' %}
+    }
+    
+    .road{
+        background-image:url('{% static 'images/highway-mobile.jpg' %}
+    }
+    
+    .air{
+        background-image:url('{% static 'images/air-mobile.jpg' %}
+    }
+    .aggriculture{
+        background-image:url('{% static 'images/aggriculture-mobile.jpg' %}
+    }  
+    
+}
+
+{% endblock style %}
+
+
+
+{% block body_content %}
+    <!-- About Header Buttons Start -->
+    <center> <div class="general-info-header">
+        <div class="banner-btn">
+            <a href="{% url 'school_info' %}" style="margin-top: -28px;"  data-aos="fade-down" data-aos-delay="150" data-aos-duration="1000"> <span></span>School Info &nbsp;&nbsp;</a>
+            <a href="{% url 'tatya_saheb_message' %}"   data-aos="fade-down" data-aos-delay="250" data-aos-duration="1000"> <span></span>Tatya Saheb MSG &nbsp;&nbsp;</a>
+            <a href="{% url 'founder_message' %}"   data-aos="fade-down" data-aos-delay="100" data-aos-duration="1000"> <span></span>Founder Message &nbsp;&nbsp;</a>
+            <a href="{% url 'principal_message' %}"  data-aos="fade-down" data-aos-delay="100" data-aos-duration="1000"> <span></span>Principal Message &nbsp;&nbsp;</a>
+            <br>
+            <a href="{% url 'vision_and_mission' %}"   data-aos="fade-down" data-aos-delay="200" data-aos-duration="1000"> <span></span>Vision And Mission &nbsp;&nbsp;</a>
+            <a href="{% url 'phylosophy' %}" data-aos="fade-down" data-aos-delay="300" data-aos-duration="1000"> <span></span>Our Phylosophy&nbsp;&nbsp;</a>
+           <!-- 
+            <a href="{% url 'alumni' %}"   data-aos="fade-down" data-aos-delay="50" data-aos-duration="1000"> <span></span> Alumni &nbsp;&nbsp;</a>
+            <a href="{% url 'school_location' %}"   data-aos="fade-down" data-aos-delay="250" data-aos-duration="1000"> <span></span>Location &nbsp;&nbsp;</a>
+           -->
+            <a href="#"  style="  color: white; background: linear-gradient(to right, #064B7B , #0098D7);"    data-aos="fade-down" data-aos-delay="250"> <span></span>Chilkhli City &nbsp;&nbsp;</a>
+      </div>
+     <img src="{% static 'img/waves.png' %}" alt="" class="waves_img">
+    </div>
+</center> 
+    <!-- About Header Buttons Stop -->
+
+<br>
+
+<div class="container bg-light container-1">
+    <h2  data-aos="fade-down" data-aos-delay="50" data-aos-duration="500">Chilkhli City</h2>
+    <hr  data-aos="zoom-in" data-aos-delay="400" data-aos-duration="1000">
+    <div class="row">
+        <div class="col-sm-12">
+            <p style="text-align:justify;" data-aos="fade-down" data-aos-delay="50" data-aos-duration="500">
+                &nbsp;&nbsp;&nbsp;<b> Chilkhli </b>   is a city  in Buldana (Dist), which is located in the Indian state of Maharashtra. It is located in the Marathwada division of the state (one of the divisions of Maharashtra based on geographical conditions).The city is located very close to Buldana District Head Quarter. The town and nearby villages rely on agriculture, which serves as a major source of income for the population.
+                <br><br> &nbsp;&nbsp;&nbsp;Chikhli  is a Taluka located in the Buldana  district of Maharashtra. It is one of the 13 Talukas of Buldana District. There are 145 villages and in Chikhli Taluka
+                <br><br> &nbsp;&nbsp;&nbsp;The main source of income in Chikhli Taluka comes from agriculture, shops and small scale industries. The town is popular for its inventory in food grains which is the result of high grain crop production in nearby villages.
+            <br></p>
+        </div>
+     </div><br>
+
+     {% comment %} railway div start {% endcomment %}
+     <div class="div-rail-text railway">
+        <h2  data-aos="fade-down" data-aos-delay="50" data-aos-duration="500">Rails</h2>
+        <hr  data-aos="zoom-in" data-aos-delay="400" data-aos-duration="1000">
+     <div class="row row-rail">
+        <div class="rail-text">
+             <div class="div-rail-text"  data-aos="fade-down" data-aos-delay="150" data-aos-duration="1500" style="background: rgba(220,200,250, .7)">
+                 <p style="text-align:justify; opacity:10px; color:black;">Nearest Rail: Malkapur  railway station is connected by trains available from and to Hyderabad, Aurangabad, Pune, Mumbai, Bangalore, Latur, Nanded, Osmanabad, Kakinada and Tirupati. Malkapur comes under the South Central Railways zone of the Indian Railways; it is part of the Secunderabad Division.</p>
+             </div>
+        </div>
+      </div>
+    </div>
+     {% comment %} railway div Stop {% endcomment %}
+
+
+     {% comment %} Highway (Road) div start {% endcomment %}
+     <div class="div-rail-text road">
+        <h2  data-aos="fade-down" data-aos-delay="50" data-aos-duration="500">Roads</h2>
+        <hr  data-aos="zoom-in" data-aos-delay="400" data-aos-duration="1000">
+     <div class="row row-rail">
+        <div class="rail-text">
+             <div class="div-rail-text"  data-aos="fade-down" data-aos-delay="150" data-aos-duration="1500" style="background: rgba(220,200,250, .7)">
+                 <p style="text-align:justify; opacity:10px; color:black;">Chikhli  is well-connected by roads with all major villages and cities in Maharashtra and nearby states. Maharashtra’s bus services, commonly known as ST or Maharashtra State Road Transport Corporation, operate day and night buses in and out of the town, providing easy, overnight and safe connectivity. Interstate government transport buses are also available from Buldana  to Indor and Surat . A New Samruddhi  Highway Is 60 Km from Chikhli whchis is connected to Aurangaba, Shirdi, Mumbai And Nagpur .
+                    </p>
+             </div>
+        </div>
+      </div>
+    </div>
+     {% comment %} Highway (Road) div Stop {% endcomment %}
+
+
+
+     {% comment %} Airoplaine div start {% endcomment %}
+     <div class="div-rail-text air">
+        <h2  data-aos="fade-down" data-aos-delay="50" data-aos-duration="500">Air</h2>
+        <hr  data-aos="zoom-in" data-aos-delay="400" data-aos-duration="1000">
+     <div class="row row-rail">
+        <div class="rail-text">
+             <div class="div-rail-text"  data-aos="fade-down" data-aos-delay="150" data-aos-duration="1500" style="background: rgba(220,200,250, .7)">
+                 <p style="text-align:justify; opacity:10px; color:black;">The nearest major domestic and international airport which is at 150 km from Chikhli  is Chhatrapati Sambhaji international Airport, Chhatrapati Sambhajinagar , Maharastra State, India.</p>
+             </div>
+        </div>
+      </div>
+    </div>
+     {% comment %} Airoplaine div Stop {% endcomment %}
+
+
+
+     {% comment %} Aggriculture div start {% endcomment %}
+     <div class="div-rail-text aggriculture">
+        <h2  data-aos="fade-down" data-aos-delay="50" data-aos-duration="500">Agriculture</h2>
+        <hr  data-aos="zoom-in" data-aos-delay="400" data-aos-duration="1000">
+     <div class="row row-rail">
+        <div class="rail-text">
+             <div class="div-rail-text"  data-aos="fade-down" data-aos-delay="150" data-aos-duration="1500" style="background: rgba(220,200,250, .7)">
+                 <p style="text-align:justify; opacity:10px; color:black;">The main occupation of the people of Chikhli   is agriculture. Chikhli   has farmers that make up the rural setting in most of the surrounding areas. The soil as a part of the Deccan plateau is black basalt soil, rich in hummus. The main crops cultivated here are whole grains, including jawar, bajra, and wheat. Crops like sorghum, mung, tur, urad gram, soybean, sugar cane, onions, and other green leafy vegetables are also cultivated.
+                   <br><br> Agriculture-based businesses like pulses (dal) industry, warehouses, cold storage, sugar factories also run here. chikhli  has around 80 dal (mils) processing units.
+
+                 </p>
+             </div>
+        </div>
+      </div>
+    </div>
+     {% comment %} Aggriculture div Stop {% endcomment %}
+
+</div>
+{% endblock body_content %}

@@ -1,0 +1,418 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block style %}
+.admission-header{
+    height: 240px;
+    width: 98%;
+    background-image: linear-gradient(to top, #064B7B , #0098D7);
+    margin-top: 8px;
+    border-radius: 10px;
+    }
+    .admission-header .waves_img{
+        height: auto;
+        width: 100%;
+        position: relative;
+        transform: translateY(2rem);
+    }
+    
+    @media screen and (max-width: 770px){
+        .admission-header{
+            border-radius:0px 0px 50px 50px;
+            height:180px;
+        }
+        .admission-header .waves_img{
+        height: auto;
+        width: 100%;
+        position: relative;
+        transform: translateY(1rem);
+        display:none;
+    } 
+    
+    }
+    
+    
+    .banner-btn a{
+        border-radius: 8px;
+        width: 170px;
+        text-decoration: none;
+        display: inline-block;
+        margin: 0 10px;
+        padding: 12px 0;
+        color: #0098D7;
+        background-color: rgb(255, 255, 255);
+        border: 1px solid rgb(255, 255, 255);
+        position: relative;
+        z-index: 1;
+        transition: color 0.5s;
+        margin-top: 10px;
+        font-weight: bold;
+    }
+    
+    .banner-btn a span{
+    width: 0%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: linear-gradient(to right, #064B7B , #0098D7);
+    z-index: -1;
+    transition: 0.5s;
+    }
+    .banner-btn a:hover span{
+        border-radius: 8px;
+        width: 100%
+    }
+    .banner-btn a:hover{
+        color:rgb(255, 255, 255);
+    }
+    @media screen and (max-width: 400px) {
+        .banner-btn a {
+          font-size: 12px;
+          width: 130px;
+        }
+      } 
+
+    
+
+
+   
+
+
+
+
+
+
+.container-1{
+    background-color:white;
+    box-shadow:0px 0px 10px;
+    padding:20px;
+    border-radius:50px;
+}
+.row-1{
+    box-shadow:0px 0px 10px;
+    border-radius:5px;
+    margin:10px;
+    padding:5px;
+}
+h2{
+    text-align:center;
+    color:#0098D7
+}
+
+
+
+
+.icons{
+    padding:50px;
+    {% comment %} height:100px; {% endcomment %}
+    text-align:center;
+}
+.icons i{
+    color:#0098D7;
+    font-size:30px;
+    border:2px solid #0098D7;
+    padding:7px;
+    border-radius:5px;
+    transition:0.5s;
+    margin:10px;
+    }
+    
+.icons i:hover{
+        background-color:#0098D7;
+        color:white;
+        font-size:50px;
+        border:2px solid #0098D7;
+        padding:7px;
+        border-radius:5px;
+        transition:0.8s;
+        }
+
+@media screen and (max-width: 770px){
+.col-sm-3{
+    margin-top:18px;
+}
+
+}
+        
+        
+H6{
+    margin-top:15px;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+	html {
+		scroll-behavior: auto;
+	}
+}
+
+
+
+
+
+
+.table_scroll{
+    height:420px;
+    overflow-x:scroll;
+    overflow-y:scroll;
+}
+.table{
+  min-width: max-content;
+}
+th{
+  background-color: #0098D7;
+  text-align:center;
+}
+tr,td{
+    text-align:center;
+}
+.border{
+    border:2px solid black;
+}
+{% endblock style %}
+
+
+
+{% block body_content %}
+    <!-- About Header Buttons Start -->
+    <center> <div class="admission-header">
+        <div class="banner-btn">
+          <a href="{% url 'age_criteria' %}" data-aos="fade-down" data-aos-delay="100"  data-aos-duration="1000"> <span></span> Age Limit &nbsp;&nbsp;</a> 
+            <a href="{% url 'documents' %}" data-aos="fade-down" data-aos-delay="100"  data-aos-duration="1000"> <span></span> Documents &nbsp;&nbsp;</a> 
+            <a href="#"  style="margin-top: -28px; color: white; background: linear-gradient(to right, #064B7B , #0098D7);"  data-aos="fade-down" data-aos-delay="150"  data-aos-duration="1000"> <span></span> Guidlines &nbsp;&nbsp;</a>
+            <a href="{% url 'withdrawal' %}"   data-aos="fade-down" data-aos-delay="200"  data-aos-duration="1000"> <span></span>Withdrawal &nbsp;&nbsp;</a>
+        </div>
+     <img src="{% static 'img/waves.png' %}" alt="" class="waves_img">
+    </div>
+</center> 
+    <!-- About Header Buttons Stop -->
+
+
+<br>
+<div class="container container-1">
+        <center><h2>Admission Guidlines</h2></center>
+        <br>
+    <div class="row row-1 icons">
+        <div style="width:100%; background-color:#0098D7; margin-top:-30px; margin-bottom:30px; padding-top:8px; border-radius:4px;" ><center><h3 style="color:white;">SUBJECT CHOICE 2022-23</h3></center></div>
+        <div class="col-sm-3"><a href="#XI_AND_XII"><i class="bi bi-book-half"></i><br><h6> GRADE XI & XII </h6></a></div>
+        <div class="col-sm-3"><a href="#X"><i class="bi bi-book-half"></i><br><h6>GRADE X</h6></a></div>
+        <div class="col-sm-3"><a href="#IX"><i class="bi bi-book-half"></i><br><h6>GRADE IX</h6></a></div>
+        <div class="col-sm-3"><a href="#VI_TO_VIII"><i class="bi bi-book-half"></i><br><h6>GRADE VI to VIII</h6></a></div>
+    </div>
+<br>
+        <div class="row row-1">
+        <div class="col-sm-12"><br>
+            <p>A student who wishes to take admission in a desired class needs to apply through the prescribed application form which is available in the school office. After scrutinizing the application, the school may inform the students about the admission accordingly depending upon the availability of the seats.</p>
+            <p><b>The students are required to submit the following documents along with application form:</b></p>
+             <p><spam  data-aos="fade-left" data-aos-delay="100" data-aos-duration="1000"> <i class="fa fa-arrow-alt-circle-right mr-2" style="color:#0098D7; margin:5px;"></i> School leaving Certificate [last school attended]</p> 
+            <br><p><spam  data-aos="fade-left" data-aos-delay="100" data-aos-duration="1000"> <i class="fa fa-arrow-alt-circle-right mr-2" style="color:#0098D7; margin:5px;"></i>Birth Certificate [if the child has not attended any school before] </p> 
+            <br><p><spam  data-aos="fade-left" data-aos-delay="100" data-aos-duration="1000"> <i class="fa fa-arrow-alt-circle-right mr-2" style="color:#0098D7; margin:5px;"></i>An Affidavit [if the child is coming from an unrecognized school] </p> 
+            <br><p><spam  data-aos="fade-left" data-aos-delay="100" data-aos-duration="1000"> <i class="fa fa-arrow-alt-circle-right mr-2" style="color:#0098D7; margin:5px;"></i>4 passport size photographs </p> 
+            <br><p><spam  data-aos="fade-left" data-aos-delay="100" data-aos-duration="1000"> <i class="fa fa-arrow-alt-circle-right mr-2" style="color:#0098D7; margin:5px;"></i>1 passport size photo of each of the parents </p> 
+            <br><p><spam  data-aos="fade-left" data-aos-delay="100" data-aos-duration="1000"> <i class="fa fa-arrow-alt-circle-right mr-2" style="color:#0098D7; margin:5px;"></i>Caste Certificate [if the child belongs to a reserved category]. </p> 
+            <br><p><spam  data-aos="fade-left" data-aos-delay="100" data-aos-duration="1000"> <i class="fa fa-arrow-alt-circle-right mr-2" style="color:#0098D7; margin:5px;"></i>Child Aadhar card xerox copy. </p> 
+                <br>
+
+        </div>
+    </div>
+
+<br>
+    
+    {% comment %} table GRADE XI & XII (2022-2023) start {% endcomment %}
+     
+    {% comment %} table GRADE XI & XII (2022-2023) STOP {% endcomment %}
+
+<br>
+
+    {% comment %} SUBJECT CHOICE IN GRADE IX (2022-2023) start {% endcomment %}
+    <div class="row row-1" id="IX" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
+        <div class="col-sm-12"><br>
+            <br>
+            <div class="table_scroll" >
+                <center>
+                    <h3>SUBJECT CHOICE IN GRADE IX (2023-2024)</h3>
+                    <p>Grade IX</p>
+                </center>
+                <table class="table table-hover" >
+                    <thead>
+                        <tr class="border">      
+                            <td class="text-center border" colspan="2"><b>Compulsory Subjects</b></td>
+                            <td class="text-center border" colspan="2"><b>Optional Subject - 1 (Any One)</b></td>
+                        </tr>
+                      <tr>
+                        <th scope="col" class="text-center text-white border">SUBJECT CODE</th>
+                        <th scope="col" class="text-center text-white border">SUBJECT</th>
+                        <th scope="col" class="text-center text-white border">SUBJECT CODE</th>
+                        <th scope="col" class="text-center text-white border">SUBJECT</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="">      
+                           <td class="text-center border" >101</td>
+                           <td class="text-center border" >English Language & Literature</td>
+                           <td class="text-center border" >009</td>
+                           <td class="text-center border" >Marathi</td>
+                         </tr>
+                       
+                         <tr class="">      
+                            <td class="text-center border">086</td>
+                            <td class="text-center border">Science</td>
+                            <td class="text-center border"> </td>
+                            <td class="text-center border"> </td>
+                          </tr>
+                        
+                          <tr class="">      
+                            <td class="text-center border">041</td>
+                            <td class="text-center border">Mathematics</td>
+                            <td class="text-center border"> </td>
+                            <td class="text-center border"> </td>
+                          </tr>
+                        
+                          <tr class="">      
+                            <td class="text-center border">087</td>
+                            <td class="text-center border">Social Studies</td>
+                            <td class="text-center border"> </td>
+                            <td class="text-center border"> </td>
+                          </tr>
+                        
+                    </tbody>
+                  </table>
+                </div>
+                 <br>
+        </div>
+    </div>
+    {% comment %} SUBJECT CHOICE IN GRADE IX (2022-2023) STOP {% endcomment %}
+
+
+
+    <br>
+
+    {% comment %} SUBJECT CHOICE IN GRADE X (2022-2023) start {% endcomment %}
+    <div class="row row-1" id="X" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
+        <div class="col-sm-12"><br>
+            <br>
+            <div class="table_scroll" >
+                <center>
+                    <h3>SUBJECT CHOICE IN GRADE X (2022-2023)</h3>
+                    <p>Grade X</p>
+                </center>
+                <table class="table table-hover" >
+                    <thead>
+                        <tr class="border">      
+                            <td class="text-center border" colspan="2"><b>Compulsory Subjects</b></td>
+                            <td class="text-center border" colspan="2"><b>Optional Subject - 1 (Any One)</b></td>
+                        </tr>
+                      <tr>
+                        <th scope="col" class="text-center text-white border">SUBJECT CODE</th>
+                        <th scope="col" class="text-center text-white border">SUBJECT</th>
+                        <th scope="col" class="text-center text-white border">SUBJECT CODE</th>
+                        <th scope="col" class="text-center text-white border">SUBJECT</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="">      
+                           <td class="text-center border" >101</td>
+                           <td class="text-center border" >English Language & Literature</td>
+                           <td class="text-center border" >009</td>
+                           <td class="text-center border" >Marathi</td>
+                         </tr>
+                       
+                         <tr class="">      
+                            <td class="text-center border">086</td>
+                            <td class="text-center border">Science</td>
+                            <td class="text-center border"> </td>
+                            <td class="text-center border"> </td>
+                          </tr>
+                        
+                          <tr class="">      
+                            <td class="text-center border">041</td>
+                            <td class="text-center border">Mathematics</td>
+                            <td class="text-center border"> </td>
+                            <td class="text-center border"> </td>
+                          </tr>
+                        
+                          <tr class="">      
+                            <td class="text-center border">087</td>
+                            <td class="text-center border">Social Studies</td>
+                            <td class="text-center border"> </td>
+                            <td class="text-center border"> </td>
+                          </tr>
+                        
+                    </tbody>
+                  </table>
+                </div>
+                 <br>
+        </div>
+    </div>
+    {% comment %} SUBJECT CHOICE IN GRADE X (2022-2023) STOP {% endcomment %}
+
+
+
+    <br>
+
+
+    {% comment %} SUBJECT CHOICE IN GRADE VI to VIII (2022-2023) (2022-2023) start {% endcomment %}
+    <div class="row row-1" id="VI_TO_VIII" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
+        <div class="col-sm-12"><br>
+            <br>
+            <div class="table_scroll" style="height:470px;">
+                <center>
+                    <h3>SUBJECT CHOICE IN GRADE VI to VIII (2022-2023)</h3>
+                    <p>GRADE VI to VIII</p>
+                </center>
+                <table class="table table-hover" >
+                    <thead>
+                        <tr class="border">      
+                            <td class="text-center border" colspan="2"><b>3rd Language Subject option available</b></td>
+                        </tr>
+                      <tr>
+                        <th scope="col" class="text-center text-white border">Compulsory Subjects</th>
+                        <th scope="col" class="text-center text-white border">Compulsory Subjects</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr class="">      
+                            <td class="text-center border" >English </td>
+                            <td class="text-center border" >Marathi </td>
+                          </tr>
+                       
+                          <tr class="">      
+                            <td class="text-center border" >Hindi </td>
+                            <td class="text-center border" >Computer </td>
+                          </tr>
+                       
+                          <tr class="">      
+                            <td class="text-center border" >Mathematics </td>
+                            <td class="text-center border" >Computer </td>
+                          </tr>
+                       
+                        <tr class="">      
+                           <td class="text-center border" >Social Studies </td>
+                           <td class="text-center border" > </td>
+                         </tr>
+                       
+                         <tr class="">      
+                            <td class="text-center border" >Science </td>
+                            <td class="text-center border" > </td>
+                          </tr>
+                           
+                    </tbody>
+                  </table>
+                </div>
+                 <br>
+        </div>
+    </div>
+    {% comment %} SUBJECT CHOICE IN GRADE VI to VIII (2022-2023) STOP {% endcomment %}
+
+
+
+
+
+</div>
+
+{% endblock body_content %}

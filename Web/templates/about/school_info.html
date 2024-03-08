@@ -1,0 +1,385 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block style %}
+.general-info-header{
+    height: 300px;
+    width: 98%;
+    background-image: linear-gradient(to top, #064B7B , #0098D7);
+    margin-top: 8px;
+    border-radius: 10px;
+    }
+    .general-info-header .waves_img{
+        height: auto;
+        width: 100%;
+        position: relative;
+        transform: translateY(2rem);
+    
+    }
+
+    @media screen and (max-width: 770px){
+        .general-info-header{
+            height:250px;
+            border-radius:0px 0px 50px 50px;
+        }
+        .general-info-header .waves_img{
+        width: 100%;
+        position: relative;
+        transform: translateY(1rem);
+        display:none;
+    } 
+    
+    .inner-class{
+        border-radius:10px;
+        box-shadow:0px 0px 10px;
+        padding:7px;
+    }
+    h4{
+        margin-top:15px;
+        text-align:center;
+    }
+    }
+    
+    
+    .banner-btn a{
+        border-radius: 8px;
+        width: 170px;
+        text-decoration: none;
+        display: inline-block;
+        margin: 0 10px;
+        padding: 12px 0;
+        color: #0098D7;
+        background-color: rgb(255, 255, 255);
+        border: 1px solid rgb(255, 255, 255);
+        position: relative;
+        z-index: 1;
+        transition: color 0.5s;
+        margin-top: 10px;
+        font-weight: bold;
+    }
+    
+    .banner-btn a span{
+    width: 0%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: linear-gradient(to right, #064B7B , #0098D7);
+    z-index: -1;
+    transition: 0.5s;
+    }
+    .banner-btn a:hover span{
+        border-radius: 8px;
+        width: 100%
+    }
+    .banner-btn a:hover{
+        color:rgb(255, 255, 255);
+    }
+
+    @media screen and (max-width: 400px) {
+        .banner-btn a {
+          font-size: 12px;
+          width: 130px;
+        }
+      } 
+
+
+
+
+
+
+
+
+
+
+
+.school-info-background
+{
+    height: 500px;
+    background-repeat: no-repeat;
+    width: 100%;
+}
+.containt{
+    position: relative;
+    transform: translateY(-5rem);
+    box-shadow: 0px 0px 10px;
+    background-color: #ffffff;
+    border-radius: 5px;
+}
+.info-img{
+    {% comment %} width:20%;
+    border-radius: 10%;
+    height: auto;
+    border: 3px solid white;
+    box-shadow: 0px 0px 10px rgb(5, 144, 194); {% endcomment %}
+    {% comment %} position:relative;
+    transform: translateY(-2rem); {% endcomment %}
+    display:none;
+}
+
+.container-1{
+    margin-top: 20px;
+    padding: 25px;
+}
+.row-1{
+    padding: 5px;
+}
+.col_sm_12, .col_sm_6{
+    /* box-shadow: 0px 0px 10px; */
+    text-align: justify;
+}
+h3{
+    color: #0098D7;
+}
+
+.laboratory_top_margin{
+    margin-top:0px;
+}
+.lab_top_margin{
+    margin-top:0px;
+}
+
+
+@media screen and (max-width: 770px){
+    .container-1{
+    padding: 25px;
+}
+.school-info-background
+{
+    display: none;
+}
+.containt{
+    margin-top: 50px;
+    position: relative;
+    transform: translateY(0rem);
+    box-shadow: 0px 0px 5px;
+    background-color: #ffffff;
+    border-radius: 50px;
+}
+.info-img{
+    width:45%;
+    border-radius: 100%;
+    height: auto;
+    border: 3px solid white;
+    box-shadow: 0px 0px 10px rgb(5, 144, 194);
+    position:relative;
+    transform: translateY(-3.5rem);
+}
+
+.row-1{
+    padding: 20px;
+}
+.col_sm_12, .col_sm_6{
+    text-align: justify;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px;
+    margin-top: 5px;
+    padding-top:20px;
+    padding-bottom:20px;
+}
+.laboratory_top_margin{
+    margin-top:13px;
+}
+.lab_top_margin{
+    margin-top:-32px;
+}
+}
+
+
+
+.row-2{
+    box-shadow:0px 0px 10px;
+    border-radius:5px;
+    margin:10px;
+    padding:5px;
+}
+
+.icons{
+    padding:50px;
+    {% comment %} height:100px; {% endcomment %}
+    text-align:center;
+}
+.icons i{
+    color:#0098D7;
+    font-size:30px;
+    border:2px solid #0098D7;
+    padding:7px;
+    border-radius:5px;
+    transition:0.5s;
+    margin:10px;
+    }
+    
+.icons i:hover{
+        background-color:#0098D7;
+        color:white;
+        font-size:50px;
+        border:2px solid #0098D7;
+        padding:7px;
+        border-radius:5px;
+        transition:0.8s;
+        }
+        
+H6{
+    margin-top:15px;
+}
+
+
+.icon-div{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+    width:25%;
+}
+
+
+@media screen and (max-width: 770px){
+    .icons{
+        padding:15px;
+        {% comment %} height:100px; {% endcomment %}
+        text-align:center;
+    }
+    
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+	html {
+		scroll-behavior: auto;
+	}
+}
+
+
+{% endblock style %}
+2
+{% block body_content %}
+    <!-- About Header Buttons Start -->
+    <center> <div class="general-info-header">
+        <div class="banner-btn">
+            <a href="#"  style="margin-top: -28px; color: white; background: linear-gradient(to right, #064B7B , #0098D7);"   data-aos="fade-down" data-aos-delay="150" data-aos-duration="1000"> <span></span>School Info &nbsp;&nbsp;</a>
+            <a href="{% url 'tatya_saheb_message' %}"   data-aos="fade-down" data-aos-delay="250" data-aos-duration="1000"> <span></span>Tatya Saheb MSG &nbsp;&nbsp;</a>
+            <a href="{% url 'founder_message' %}" data-aos="fade-down" data-aos-delay="100" data-aos-duration="1000"> <span></span>Founder Message &nbsp;&nbsp;</a>
+            <a href="{% url 'principal_message' %}"  data-aos="fade-down" data-aos-delay="100" data-aos-duration="1000"> <span></span>Principal Message &nbsp;&nbsp;</a>
+            <br>
+            <a href="{% url 'vision_and_mission' %}"   data-aos="fade-down" data-aos-delay="200" data-aos-duration="1000"> <span></span>Vision And Mission &nbsp;&nbsp;</a>
+            <a href="{% url 'phylosophy' %}"  data-aos="fade-down" data-aos-delay="300" data-aos-duration="1000"> <span></span>Our Phylosophy&nbsp;&nbsp;</a>
+           <!-- 
+            <a href="{% url 'alumni' %}"   data-aos="fade-down" data-aos-delay="50" data-aos-duration="1000"> <span></span> Alumni &nbsp;&nbsp;</a>
+            <a href="{% url 'school_location' %}"   data-aos="fade-down" data-aos-delay="250" data-aos-duration="1000"> <span></span>Location &nbsp;&nbsp;</a>
+           -->
+            <a href="{% url 'chikhli_city' %}"   data-aos="fade-down" data-aos-delay="250" data-aos-duration="1000"> <span></span>Chilkhli City &nbsp;&nbsp;</a>
+      </div>
+     <img src="{% static 'img/waves.png' %}" alt="" class="waves_img">
+    </div>
+</center> 
+    <!-- About Header Buttons Stop -->
+
+<br>
+
+<!-- About School information -->
+<div class="school-info-background" width="100%">
+    <img src="{% static 'img/school-info-background.jpg' %}" alt="" width="100%">
+ </div>
+ <!--
+ <div class="container container-1 containt"  >
+    <center> <h3 data-aos="fade-down" data-aos-delay="50">School Information</h3></center>
+        <br>
+        <div class="row row-2 icons"  data-aos="fade-down" data-aos-delay="100" data-aos-duration="1000">
+        <div class="icon-div"><a href="#information"><i class="bi bi-info-circle-fill"></i><br><h6> info</h6></a></div>
+        <div class="icon-div"><a href="#smart_class"><i class="bi bi-lightbulb-fill"></i><br><h6>smart_class</h6></a></div>
+        <br> <br> <div class="icon-div"><a href="#library"><i class="bi bi-book-half"></i><br><h6>library</h6></a></div>
+        <div class="icon-div"><a href="#Laboratories"><i class="bi bi-funnel-fill"></i><br><h6>Laboratories</h6></a></div>
+    </div>
+
+     <div class="row-1 row" id="information">
+         <div class="col-sm-12 col_sm_12"  >
+       <br><br><spam>  <i class="fa fa-arrow-alt-circle-right mr-2" style="color:#0098D7; margin:5px;"></i>  BPS is a long cherished dream of Late Sree. Pundlikrao Gawali who was an Indian politician and M.P. representing Washim district from 1996 to 1998 in the 11th Loksabha.  </spam> 
+       <br><br><spam>  <i class="fa fa-arrow-alt-circle-right mr-2" style="color:#0098D7; margin:5px;"></i> BHAVANA PUBLIC SCHOOL, Degaon, Chilkhli was established by  Bhavana P.Gawali, under the aegis of the society of Mahila Utkarsh Pratisthans, Chilkhli,  August 10th  -  2003, with a commitment to pay her dues to Chilkhli and a vision to provide holistic education with international standards  with Indian values for the children of Chilkhli and its surrounding areas.  </spam> 
+       <br><br><spam>  <i class="fa fa-arrow-alt-circle-right mr-2" style="color:#0098D7; margin:5px;"></i> The school is situated in a Five acre lush green campus on the outskirts of Chilkhli, in a serene atmosphere, free from pollution, to enable the children to discover their true potential and acquire the requisite skills. The multi-storied school building provides all the modern amenities which include a multipurpose hall equipped with LCD and audio-video system, library, reading room, smart classrooms, indoor & outdoor sports facilities, science labs, mathematics lab, RO water purifier with cooler, hygienic toilets for boys and girls in each floor.  </spam> 
+       <br><br><spam>  <i class="fa fa-arrow-alt-circle-right mr-2" style="color:#0098D7; margin:5px;"></i> The School is a boarding cum day boarding co-ed school from Grade 1st  to Grade 12th. 
+                                                                                        <br>   &nbsp;&nbsp;&nbsp;&nbsp;  We are affiliated to the CBSE Delhi vide affiliation No. 1130216. We believe in holistic approach towards over all development of the child by imparting quality education complimented by lovely campus in natural setting with grand infrastructure supported by a strong co – curricular programme which includes sports, visual and performing arts, leadership opportunities through diversified programme. We focus on grooming the students as a confident and independent individuals who are prepared for the real world and ready for the future.
+         </spam> 
+       <br><br><spam>  <i class="fa fa-arrow-alt-circle-right mr-2" style="color:#0098D7; margin:5px;"></i> A renowned Industrialist, Entrepreneurial builder and Philanthropist, a man of vision and foresight, who has envisaged this Institution as a seat of learning where every child will seek holistic education and grow into well balanced individual with global knowledge and values.  </spam> 
+       <br><br><spam>  <i class="fa fa-arrow-alt-circle-right mr-2" style="color:#0098D7; margin:5px;"></i> To function as ‘NOT FOR PROFIT’ for the parents from the small villages those who come from very low financial background,  Main objective of establishing  the school and college was to give good quality and modern education to each and every child of rural area.   </spam> 
+       <br><br><spam>  <i class="fa fa-arrow-alt-circle-right mr-2" style="color:#0098D7; margin:5px;"></i>   To focus on extracurricular activities, personality and behavior development of the child in order to achieve overall development result school in rural areas. Rural student should be able to face the competitive exams and any challenge in their life. </spam> 
+       </p>  
+         </div>
+     </div>
+ </div>
+ -->
+ 
+ <div class="container container-1 containt" id="smart_class" style="background-image: linear-gradient(to right, rgb(3, 112, 196),rgb(4, 42, 92)); color: white;"  data-aos="fade-down" data-aos-delay="150" data-aos-duration="1000">
+     <div class="row-1 row">
+         <div class="col-sm-12">
+             <center><h3  style="color: rgb(255, 242, 0);">Smart Classrooms</h3></center>
+         </div>
+     </div>
+     <div class="row-1 row">
+       <div class="col-sm-6 col_sm_6">
+         <p >&nbsp; &nbsp;The individual classrooms are spacious, well ventilated and technology enabled with an empowering learning environment. The Audio-visual equipment complements the activity-based learning methodology in the classroom giving ample opportunity to the students of all learning styles – Auditory, Visual and Kinesthetic learners to participate actively in their learning process.
+                                               <br>&nbsp; &nbsp;&nbsp; &nbsp; The teachers having been trained in the usage of these hardware equipment like projectors, smart boards, tablets etc., and software like you tube, customized websites etc., are able to integrate these teaching aids in their lesson plans for the benefit of the students.
+            
+         </p>  </div>
+ 
+       <div class="col-sm-6 col_sm_6 laboratory_top_margin">
+         <center>  <img src="{% static 'images/smart_class.jpg' %}" alt="" style="height: auto; width:95%; padding: 10px 0px 10px 0px;" data-aos="flip-up" data-aos-delay="100"></center>
+       </div>
+     </div>
+ </div>
+ 
+ 
+ <div class="container container-1 containt" id="library" style="background-image: linear-gradient(to right, rgb(3, 112, 196),rgb(4, 42, 92)); color: white;"  data-aos="fade-down" data-aos-delay="150" data-aos-duration="1000">
+    <div class="row-1 row">
+        <div class="col-sm-12">
+            <center><h3  style="color: rgb(255, 242, 0);">Library & Reading Room</h3></center>
+        </div>
+    </div>
+    <div class="row-1 row">
+      <div class="col-sm-6 col_sm_6">
+        <p >&nbsp; &nbsp;The Library of a school as considered as the learning center of the school. With a repository of more than 10,000 books for academic reference, epics, legends, and a large collection of stories and comics for children of all age groups. With a subscription of more than 25 child magazines, journals and periodicals the school library boasts of being a powerhouse of knowledge, current affairs and academic excellence. With the guidance of the qualified librarian to the teachers and students, the school library is one of the popular destination for the staff and students of the school.           
+        </p>  </div>
+
+      <div class="col-sm-6 col_sm_6 laboratory_top_margin">
+        <center>  <img src="{% static 'images/Library_reading_hall.jpg' %}" alt="" style="height: auto; width:95%; padding: 10px 0px 10px 0px;" data-aos="flip-up" data-aos-delay="100"></center>
+      </div>
+    </div>
+</div>
+
+
+ 
+ <div class="container container-1 containt" id="Laboratories"  data-aos="fade-down" data-aos-delay="150" data-aos-duration="1000">
+    <div class="row row-1">
+        <div class="col-sm-12 col_sm_12">
+         <center><h3>Laboratories</h3></center>
+         <p >&nbsp; &nbsp; Our school has well equipped and organized labs of Physics, Chemistry and Biology; where basic experimental skills are learnt by systematically performing a set of prescribed and suitably designed experiments. It also facilitates understanding the concepts of science. Through experiment students get a first-hand learning experience by performing various experiments on their own.</p> 
+        </div>
+    </div>
+
+     <div class="row-1 row">
+       <div class="col-sm-6 col_sm_6">
+         <center><h3>Maths Laboratory</h3></center>
+          <p> &nbsp; &nbsp; Maths lab provides an opportunity for the students to discover mathematics through doing. The school is providing Maths-Kit to each students, so they can attempt to prove their conjectures.</p>  </div>
+       <div class="col-sm-6 col_sm_6 laboratory_top_margin">
+         <center><h3>Language Lab</h3></center>
+         <p>&nbsp; &nbsp;Learning a new language just by studying the theory is not enough to guarantee a successful language learning experience. It provides practice in an Entertaining and interactive way to acquire the 4 main language skills – listening, speaking, reading and writing.
+         </p>  </div>
+     </div>
+
+     
+     <div class="row-1 row lab_top_margin">
+        <div class="col-sm-6 col_sm_6">
+          <center><h3>Computer Lab</h3></center>
+           <p>&nbsp; &nbsp; The facility of modern computer lab equipped with the latest technology is available to each child. accessing the new technology is very easy for 21st century child. but they are getting through knowledge with practical in the school computer lab.</p>  </div>
+        <div class="col-sm-6 col_sm_6 laboratory_top_margin">
+          <center><h3>Multipurpose Hall</h3></center>
+          <p>&nbsp; &nbsp;School has a very large multipurpose hall which is used for the parent orientation programs, PTM, Teacher training programs, Motivational and guidance for the student by Experts. It is also equipped with LCD projector and audio system.
+          </p>  </div>
+      </div>
+ </div>
+ 
+ 
+
+{% endblock body_content %}

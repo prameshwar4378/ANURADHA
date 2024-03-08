@@ -1,0 +1,83 @@
+{% load crispy_forms_tags %}
+
+<html>
+    <head>
+        <title>
+            BPS-Enquiry
+
+        </title>
+    </head>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Free HTML Templates" name="keywords">
+    <meta content="Free HTML Templates" name="description">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+ <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+ 
+ <!-- animation link -->
+ <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<link href="https://unpkg.com/aos@next/dist/aos.css" rel="stylesheet" />
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+
+<style>
+    body{
+        background:linear-gradient(to right,#DB0202 ,#CE02DB  )
+    }
+    .col-sm-8, .col-sm-2{
+        background-color:white;
+        padding-left:10px;
+        padding-right:10px;
+        border-radius:10px;
+        margin:10px;
+    }
+    .row-1{
+        {% comment %} margin-top:3rem; {% endcomment %}
+    }
+
+    #id_message{
+        height:65px;
+    }
+    .heading{
+      margin-top:20px;
+    }
+</style>
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-10 heading">
+              <center> <h3 class="alert alert-info">Enquiry Form</h3></center> 
+            </div>
+            <div class="col-sm-1"></div>
+        </div>
+        <div class="row row-1">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-2"></div>
+            <div class="col-sm-8">
+            <form action="" method="POST">{% csrf_token %}
+                {{fm.full_name|as_crispy_field}}
+                {{fm.email|as_crispy_field}}
+                {{fm.mobile|as_crispy_field}}
+                {{fm.subject|as_crispy_field}}
+                {{fm.message|as_crispy_field}} 
+          <center> <button class="btn btn-info mt-2" style="width:70%; border-radius:30px;" >Submit</button></center> <br><br>
+            </form>
+            </div>
+            <div class="col-sm-1"></div>
+        </div>
+    </div>
+       
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script>
+  {% for msg in messages %}
+  swal("Done", "{{msg}}", "success");
+{% endfor %}
+</script>
+
+
+</body>
+</html>

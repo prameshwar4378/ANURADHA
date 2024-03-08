@@ -1,0 +1,292 @@
+{% extends "base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block body_content %}
+<style>
+    
+    /*--------------------------------------------------------------
+    # Hero Section
+    --------------------------------------------------------------*/
+    #hero {
+      width: 100%;
+      height: 80vh;
+      background: url("{% static 'images/contact-us-hero.jpg' %}") center center;
+      background-size: cover;
+      position: relative;
+    }
+    
+    #hero .container {
+      padding-top: 80px;
+    }
+    
+    #hero:before {
+      content: "";
+      background: rgba(0, 0, 0, 0.6);
+      position: absolute;
+      bottom: 0;
+      top: 0;
+      left: 0;
+      right: 0;
+    }
+    
+    #hero h1 {
+      margin: 0 0 10px 0;
+      font-size: 48px;
+      font-weight: 700;
+      line-height: 56px;
+      color: #fff;
+    }
+    
+    #hero h2 {
+      color: #eee;
+      margin-bottom: 40px;
+      font-size: 15px;
+      font-weight: 500;
+      font-family: "Open Sans", sans-serif;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+    
+    #hero .btn-get-started {
+      font-family: "Poppins", sans-serif;
+      text-transform: uppercase;
+      font-weight: 500;
+      font-size: 14px;
+      letter-spacing: 1px;
+      display: inline-block;
+      padding: 8px 28px;
+      border-radius: 50px;
+      transition: 0.5s;
+      margin: 10px;
+      border: 2px solid #fff;
+      color: #fff;
+    }
+    
+    #hero .btn-get-started:hover {
+      background: #009970;
+      border: 2px solid #009970;
+    }
+    
+    @media (min-width: 1024px) {
+      #hero {
+        background-attachment: fixed;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      #hero {
+        height: 100vh;
+      }
+    
+      #hero .container {
+        padding-top: 60px;
+      }
+    
+      #hero h1 {
+        font-size: 32px;
+        line-height: 36px;
+      }
+    }
+    
+    
+        /*--------------------------------------------------------------
+        # Contact Section
+        --------------------------------------------------------------*/
+        .contact .info-container {
+            background-color: #C6E6FD;
+            height: 100%;
+            padding: 20px;
+            border-radius: 10px 0 0 10px;
+            box-shadow: 0px 2px 25px rgba(0, 0, 0, 0.1);
+          }
+          
+          .contact .info-item {
+            width: 100%;
+            background: linear-gradient(90deg, rgba(30,41,91,1) 0%, rgba(16,135,159,1) 100%);
+            margin-bottom: 20px;
+            padding: 20px;
+            border-radius: 10px;
+            color: #fff;
+          }
+          
+          .contact .info-item:last-child {
+            margin-bottom: 0;
+          }
+          
+          .contact .info-item i {
+            font-size: 20px;
+            color: #fff;
+            float: left;
+            width: 44px;
+            height: 44px;
+            background-color: rgba(255, 255, 255, 0.2);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50px;
+            transition: all 0.3s ease-in-out;
+            margin-right: 15px;
+          }
+          
+          .contact .info-item h4 {
+            padding: 0;
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 5px;
+          }
+          
+          .contact .info-item p {
+            padding: 0;
+            margin-bottom: 0;
+            font-size: 14px;
+          }
+          
+          .contact .info-item:hover i {
+            background: black;
+            color: var(--color-primary);
+          }
+          
+          .contact  button[type=submit] {
+            background: linear-gradient(180deg, rgba(30,41,91,1) 0%, rgba(16,135,159,1) 100%);
+            border: 0;
+            padding: 14px 45px;
+            color: #fff;
+            transition: 0.4s;
+            border-radius: 50px;
+          }
+          
+          .contact  button[type=submit]:hover {
+            background: linear-gradient(90deg, rgba(30,41,91,1) 0%, rgba(16,135,159,1) 100%);
+            cursor:pointer;
+          }
+          
+          @-webkit-keyframes animate-loading {
+            0% {
+              transform: rotate(0deg);
+            }
+          
+            100% {
+              transform: rotate(360deg);
+            }
+          }
+          
+          @keyframes animate-loading {
+            0% {
+              transform: rotate(0deg);
+            }
+          
+            100% {
+              transform: rotate(360deg);
+            }
+          }
+ 
+          #id_message{
+            height:100px;
+          }
+ 
+        </style>
+
+          <!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex align-items-center mb-3">
+    <div class="container text-center position-relative" >
+      <h1>Contact us</h1>
+      <a href="#contact"><img src="{% static 'images/scroll-icon.gif' %}"  alt="snyamtech" style="width:90px;"></a>
+    </div>
+  </section><!-- End Hero -->
+
+<br>
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact">
+        <div class="container" data-aos="fade-up">
+   
+  
+          <div class="row gx-lg-0 gy-4">
+  
+            <div class="col-lg-4">
+  
+              <div class="info-container d-flex flex-column align-items-center justify-content-center">
+                <div class="info-item d-flex"  data-aos="zoom-in"   data-aos-easing="linear"   data-aos-delay="100" data-aos-duration="1000">
+                  <i class="ri-map-pin-2-line flex-shrink-0"></i>
+                  <div>
+                    <h4>Location:</h4>
+                    <p>Office no. 601, Vision one office tower, Near bhumkar chowk, Wakad, Pune- 411033.
+                    </p>
+                  </div>
+                </div><!-- End Info Item -->
+  
+                <div class="info-item d-flex"  data-aos="zoom-in"   data-aos-easing="linear"   data-aos-delay="100" data-aos-duration="1000">
+                  <i class="ri-mail-check-line flex-shrink-0"></i>
+                  <div>
+                    <h4>Email:</h4>
+                    <p>snyam.tech@gmail.com</p>
+                    <p>contact@snyamtech.com</p>
+                  </div>
+                </div><!-- End Info Item -->
+  
+                <div class="info-item d-flex"  data-aos="zoom-in"   data-aos-easing="linear"   data-aos-delay="100" data-aos-duration="1000">
+                  <i class="ri-phone-line flex-shrink-0"></i>
+                  <div>
+                    <h4>Call:</h4>
+                    <p>+91-8080086897</p>
+                    <p>+91-9405109192</p>
+                  </div>
+                </div><!-- End Info Item -->
+  
+                <div class="info-item d-flex"  data-aos="zoom-in"   data-aos-easing="linear"   data-aos-delay="100" data-aos-duration="1000">
+                  <i class="ri-time-line flex-shrink-0"></i>
+                  <div>
+                    <h4>Working Hours:</h4>
+                    <p>24 Hour</p>
+                  </div>
+                </div><!-- End Info Item -->
+              </div>
+  
+            </div>
+  
+            <div class="col-lg-8 px-4 py-4">
+              <form method="POST" action="{% url "enquiry_form" %}">
+                {% csrf_token %}
+                <div class="row">
+                  <div class="col-md-6 form-group mb-3">
+                    {{ fm.first_name|as_crispy_field }}
+                  </div>
+                  <div class="col-md-6 form-group mb-3">
+                    {{ fm.last_name|as_crispy_field }}
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6 form-group mb-3">
+                    {{ fm.mobile|as_crispy_field }}
+                  </div>
+                  <div class="col-md-6 form-group mb-3">
+                    {{ fm.email|as_crispy_field }}
+                  </div>
+                </div>
+                <div class="form-group mb-3">
+                  {{ fm.subject|as_crispy_field }}
+                </div>
+                <div class="form-group mb-3">
+                  {{ fm.message|as_crispy_field }}
+                </div>
+                <div class="text-center">
+                  <button type="submit">Send Message</button>
+                </div>
+              </form>
+            </div><!-- End Contact Form -->
+            
+  
+          </div>
+  
+        </div>
+      </section><!-- End Contact Section -->
+  <br>
+<section class="map">
+<div class="container mt-4" style="max-width:1400px; border-radius:5px;box-shadow:0px 0px 10px -2px;">
+  <div class="row">
+    <div class="col-sm-12 ">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3781.2353789856606!2d73.7490202747909!3d18.608479866483872!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2b95047e12131%3A0x6075f2acd0a97ab!2sVision%20One%20Mall!5e0!3m2!1sen!2sin!4v1696856135342!5m2!1sen!2sin" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </div>
+</div>
+      </section>
+{% endblock body_content %}

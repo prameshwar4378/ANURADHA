@@ -1,0 +1,282 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block style %}
+.general-info-header{
+    height: 300px;
+    width: 98%;
+    background-image: linear-gradient(to top, #064B7B , #0098D7);
+    margin-top: 8px;
+    border-radius: 10px;
+    }
+    .general-info-header .waves_img{
+        height: auto;
+        width: 100%;
+        position: relative;
+        transform: translateY(2rem);
+    
+    }
+
+    @media screen and (max-width: 770px){
+        .general-info-header{
+            height:250px;
+            border-radius:0px 0px 50px 50px;
+        }
+        .general-info-header .waves_img{
+        width: 100%;
+        position: relative;
+        transform: translateY(1rem);
+        display:none;
+    } 
+    
+    .inner-class{
+        border-radius:10px;
+        box-shadow:0px 0px 10px;
+        padding:7px;
+    }
+    h4{
+        margin-top:15px;
+        text-align:center;
+    }
+    }
+    
+    
+    .banner-btn a{
+        border-radius: 8px;
+        width: 170px;
+        text-decoration: none;
+        display: inline-block;
+        margin: 0 10px;
+        padding: 12px 0;
+        color: #0098D7;
+        background-color: rgb(255, 255, 255);
+        border: 1px solid rgb(255, 255, 255);
+        position: relative;
+        z-index: 1;
+        transition: color 0.5s;
+        margin-top: 10px;
+        font-weight: bold;
+    }
+    
+    .banner-btn a span{
+    width: 0%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: linear-gradient(to right, #064B7B , #0098D7);
+    z-index: -1;
+    transition: 0.5s;
+    }
+    .banner-btn a:hover span{
+        border-radius: 8px;
+        width: 100%
+    }
+    .banner-btn a:hover{
+        color:rgb(255, 255, 255);
+    }
+
+    @media screen and (max-width: 400px) {
+        .banner-btn a {
+          font-size: 12px;
+          width: 130px;
+        }
+      } 
+
+
+
+
+
+
+
+.container-1{
+    background:white;
+    padding:40px;
+    box-shadow:0px 0px 10px;
+    border-radius:40px;
+}
+.row{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width:100%;
+    flex-direction: row;
+}
+.sport, .art{
+    {% comment %} flex-direction: column; {% endcomment %}
+width:40%;
+box-shadow:0px 0px 10px;
+height:250px;
+padding:15px;
+
+}
+
+.sport, .art p{
+text-align:justify;
+}
+
+h3{
+    text-align:center;
+    background-color:#0098D7;
+    color:white;
+}
+h2{
+    text-align:center;
+    color:#0098D7;
+}
+hr{
+    width:10%;
+    height:4px;
+    border-width:0;
+    color:#0098D7;
+    background-color:#0098D7;
+
+}
+@media screen and (max-width: 770px){
+    .row{
+        display: flex;
+        align-items: center;
+        width:100%;
+        flex-direction: column;
+        
+    } 
+    .sport, .art{
+        {% comment %} flex-direction: column; {% endcomment %}
+    width:95%;
+    box-shadow:0px 0px 10px;
+    margin-top:15px;
+    margin-left:15px;
+    border-radius:15px
+    padding-bottom:10px;
+    height:270px;
+    border-radius:10px;
+}
+    
+}
+
+{% endblock style %}
+
+
+
+{% block body_content %}
+    <!-- About Header Buttons Start -->
+    <center> <div class="general-info-header">
+        <div class="banner-btn">
+            <a href="{% url 'school_info' %}" style="margin-top: -28px;"  data-aos="fade-down" data-aos-delay="150" data-aos-duration="1000"> <span></span>School Info &nbsp;&nbsp;</a>
+            <a href="{% url 'tatya_saheb_message' %}"   data-aos="fade-down" data-aos-delay="250" data-aos-duration="1000"> <span></span>Tatya Saheb MSG &nbsp;&nbsp;</a>
+            <a href="{% url 'founder_message' %}"   data-aos="fade-down" data-aos-delay="100" data-aos-duration="1000"> <span></span>Founder Message &nbsp;&nbsp;</a>
+            <a href="{% url 'principal_message' %}"  data-aos="fade-down" data-aos-delay="100" data-aos-duration="1000"> <span></span>Principal Message &nbsp;&nbsp;</a>
+            <br>
+            <a href="{% url 'vision_and_mission' %}"   data-aos="fade-down" data-aos-delay="200" data-aos-duration="1000"> <span></span>Vision And Mission &nbsp;&nbsp;</a>
+            <a href="#" style="margin-top: -28px; color: white; background: linear-gradient(to right, #064B7B , #0098D7);"  data-aos="fade-down" data-aos-delay="300" data-aos-duration="1000"> <span></span>Our Phylosophy&nbsp;&nbsp;</a>
+           <!-- 
+            <a href="{% url 'alumni' %}"   data-aos="fade-down" data-aos-delay="50" data-aos-duration="1000"> <span></span> Alumni &nbsp;&nbsp;</a>
+            <a href="{% url 'school_location' %}"   data-aos="fade-down" data-aos-delay="250" data-aos-duration="1000"> <span></span>Location &nbsp;&nbsp;</a>
+           -->
+            <a href="{% url 'chikhli_city' %}"   data-aos="fade-down" data-aos-delay="250"> <span></span>Chilkhli City &nbsp;&nbsp;</a>
+      </div>
+     <img src="{% static 'img/waves.png' %}" alt="" class="waves_img">
+    </div>
+</center> 
+    <!-- About Header Buttons Stop -->
+
+<br>
+
+{% comment %} Our Philosophy Start {% endcomment %}
+
+<div class="container bg-light container-1">
+    <h2  data-aos="fade-down" data-aos-delay="50" data-aos-duration="500">Our Philosophy</h2>
+    <hr  data-aos="zoom-in" data-aos-delay="400" data-aos-duration="1000">
+    <div class="row">
+        <p style="text-align:justify;" data-aos="fade-down" data-aos-delay="50" data-aos-duration="500">
+            &nbsp;&nbsp;&nbsp; The Curriculum Framework shows the emerging student profile of ANURADHA ENGLISH MEDIUM which ensures that every child acquires Knowledge, Skills and Values. Knowledge that goes beyond the traditional boundaries of academic learning.
+           <br> &nbsp;&nbsp;&nbsp;<b> Our students will gain knowledge in:</b> Higher Order Thinking Skills – Students gain real understanding of each subject they take. This enables them to not only retain and apply but also create new knowledge and ideas from this understanding
+<br>
+<br>
+        </p>
+    </div>
+    <div class="row">
+        <div class="sport" data-aos="fade-down" data-aos-delay="50" data-aos-duration="1000">
+            <h3 class="alert">Sport</h3>
+            <p> &nbsp;&nbsp;&nbsp;Students are encouraged to take up sports, not only for fitness and health but to ingrain the values of sportsmanship and teamwork.</p>
+        </div>
+        <div class="art" data-aos="fade-down" data-aos-delay="50" data-aos-duration="1000">
+            <h3 class="alert">Art</h3>
+            <p> &nbsp;&nbsp;&nbsp;Students will develop proficiency in one or more art forms. Entrepreneurship – Students will see the world as an owner. They’ll develop an ability to reach a goal by making choices and sequencing actions. </p>
+        </div>
+    </div>
+</div>
+<br>
+{% comment %} Our Philosophy Stop {% endcomment %}
+
+
+{% comment %} 21st Century Skills Start {% endcomment %}
+<div class="container bg-light container-1">
+    <h2  data-aos="fade-down" data-aos-delay="50" data-aos-duration="500">21st Century Skills</h2>
+    <hr  data-aos="zoom-in" data-aos-delay="400" data-aos-duration="1000"><br>
+    <div class="row">
+
+        <div class="sport"  data-aos="fade-down" data-aos-delay="150" data-aos-duration="1000" style="height:500px">
+            <h3 class="alert">Communication</h3>
+            <p><br><spam data-aos="fade-down" data-aos-delay="200"> <i class="fa fa-arrow-alt-circle-right mr-2" style="color:#0098D7; margin:5px;"></i> Articulate thoughts and ideas effectively using oral, written and nonverbal communication skills in a variety of forms and contexts
+               <br><spam data-aos="fade-down" data-aos-delay="200"> <i class="fa fa-arrow-alt-circle-right mr-2" style="color:#0098D7; margin:5px;"></i> Listen effectively to decipher meaning, including knowledge, values, attitudes and intentions
+               <br><spam data-aos="fade-down" data-aos-delay="200"> <i class="fa fa-arrow-alt-circle-right mr-2" style="color:#0098D7; margin:5px;"></i> Use communication for a range of purposes (e.g. to inform, instruct, motivate and persuade)
+               <br><spam data-aos="fade-down" data-aos-delay="200"> <i class="fa fa-arrow-alt-circle-right mr-2" style="color:#0098D7; margin:5px;"></i> Utilize multiple media and technologies, and know how to judge their effectiveness a priori as well as assess their impact Communicate effectively in diverse environments(including multi-lingual)
+                </p>
+        </div>
+        <div class="art"  data-aos="fade-down" data-aos-delay="150" data-aos-duration="1000" style="height:500px"> 
+            <h3 class="alert">Collaboration</h3>
+            <p> 
+              <br><spam data-aos="fade-down" data-aos-delay="200"> <i class="fa fa-arrow-alt-circle-right mr-2" style="color:#0098D7; margin:5px;"></i>   Demonstrate ability to work effectively and respectfully with diverse teams
+              <br><spam data-aos="fade-down" data-aos-delay="200"> <i class="fa fa-arrow-alt-circle-right mr-2" style="color:#0098D7; margin:5px;"></i>   Exercise flexibility and willingness to be helpful in making necessary compromises to accomplish a common goal
+              <br><spam data-aos="fade-down" data-aos-delay="200"> <i class="fa fa-arrow-alt-circle-right mr-2" style="color:#0098D7; margin:5px;"></i>   Assume shared responsibility for collaborative work, and value the individual contributions made by each team member
+
+            </p>
+        </div>
+    </div>
+</div>
+{% comment %} 21st Century Skills Stop {% endcomment %}
+
+<br>
+
+{% comment %} ACritical Thinking {% endcomment %}
+<div class="container bg-light container-1">
+    <h2  data-aos="fade-down" data-aos-delay="50" data-aos-duration="500">Critical Thinking</h2>
+    <hr  data-aos="zoom-in" data-aos-delay="400" data-aos-duration="1000"><br>
+    <div class="row" style="text-align:left;"  data-aos="fade-right" data-aos-delay="50" data-aos-duration="1000">
+        <span style="text-align:left">
+        <p><b>  <i class="fa fa-arrow-alt-circle-right mr-2" style="color:#0098D7; margin:5px;"></i> Reason Effectively :</b> Use various types of reasoning (inductive, deductive, etc.) as appropriate to the situation</p>
+        <p><b>  <i class="fa fa-arrow-alt-circle-right mr-2" style="color:#0098D7; margin:5px;"></i> Use Systems Thinking :</b> Analyze how parts of a whole interact with each other to produce overall outcomes in complex systems</p>
+        <p><b>  <i class="fa fa-arrow-alt-circle-right mr-2" style="color:#0098D7; margin:5px;"></i> Make Judgments & Decisions : </b> Effectively analyze and evaluate evidence, arguments, claims and beliefs analyze and evaluate major alternative points of view, Synthesize and make connections between information and arguments, Interpret information and draw conclusions based on the best analysis. Reflect critically on learning experiences and processes</p>
+        <p><b>  <i class="fa fa-arrow-alt-circle-right mr-2" style="color:#0098D7; margin:5px;"></i> Problem Solving : </b> Solve different kinds of non-familiar problems in both conventional and innovative ways, Identify and ask significant questions that clarify various points of view and lead to better solution</p>
+    </span>
+    </div>
+</div>
+{% comment %} ACritical Thinking {% endcomment %}
+<br>
+{% comment %} SCreativity{% endcomment %}
+<div class="container bg-light container-1">
+    <h2  data-aos="fade-down" data-aos-delay="50" data-aos-duration="500">Creativity</h2>
+    <hr  data-aos="zoom-in" data-aos-delay="400" data-aos-duration="1000"><br>
+    <div class="row"   data-aos="fade-left" data-aos-delay="150" data-aos-duration="1000"   style="text-align:left;">
+        <span style="text-align:left">
+        <p><b>  <i class="fa fa-arrow-alt-circle-right mr-2" style="color:#0098D7; margin:5px;"></i></b>	Think Creatively</p>
+        <p><b>  <i class="fa fa-arrow-alt-circle-right mr-2" style="color:#0098D7; margin:5px;"></i></b>	Use a wide range of idea creation techniques (such as brainstorming).</p>
+        <p><b>  <i class="fa fa-arrow-alt-circle-right mr-2" style="color:#0098D7; margin:5px;"></i></b>	Create new and worthwhile ideas (both incremental and radical concepts)</p>
+        <p><b>  <i class="fa fa-arrow-alt-circle-right mr-2" style="color:#0098D7; margin:5px;"></i></b> Elaborate, refine, analyze and evaluate their own ideas in order to improve and maximize creative efforts</p>
+        <p><b>  <i class="fa fa-arrow-alt-circle-right mr-2" style="color:#0098D7; margin:5px;"></i></b> Work Creatively with Others</p>
+        <p><b>  <i class="fa fa-arrow-alt-circle-right mr-2" style="color:#0098D7; margin:5px;"></i></b>	Develop, implement and communicate new ideas to others effectively</p>
+        <p><b>  <i class="fa fa-arrow-alt-circle-right mr-2" style="color:#0098D7; margin:5px;"></i></b>	Be open and responsive to new and diverse perspectives; incorporate group input and feedback into the work</p>
+        <p><b>  <i class="fa fa-arrow-alt-circle-right mr-2" style="color:#0098D7; margin:5px;"></i></b>	Demonstrate originality and inventiveness in work and understand the real world limits to adopting new ideas</p>
+        <p><b>  <i class="fa fa-arrow-alt-circle-right mr-2" style="color:#0098D7; margin:5px;"></i></b>	View failure as an opportunity to learn; understand that creativity and innovation is a long-term, cyclical process of small successes and frequent mistakes</p>
+        <p><b>  <i class="fa fa-arrow-alt-circle-right mr-2" style="color:#0098D7; margin:5px;"></i></b> Implement Innovations Act on creative ideas to make a tangible and useful contribution to the field in which the innovation will occur. Learning for life and work connects strongly through the Core Values with communities and practice beyond the classroom like care, respect, integrity, responsibility, harmony, compassion, humility, resilience, self-awareness, self-management, social awareness, relationship management, decision making, global awareness, civic literacy and cross cultural skills</p>
+       <br>
+       <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The Learning Environment is stimulating and sustainable, is supportive and productive to the way children learn with positive relationships with all the adults, enabling environments which includes technology and strong parent school partnerships.</p>
+       <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Students’ needs, backgrounds, perspectives and interests are reflected in the core learning program which results in holistic child development and learning. Students are challenged and supported to develop deep levels of thinking and communication and application which results in them being active learners for life and virtuous global citizens.</p>
+    
+    </span>
+    </div>
+</div>
+{% comment %} SCreativity {% endcomment %}
+
+{% endblock body_content %}

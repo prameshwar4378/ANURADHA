@@ -1,0 +1,415 @@
+{% load crispy_forms_tags %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Anuradha English Medium School </title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Free HTML Templates" name="keywords">
+    <meta content="Free HTML Templates" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet"> 
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    {% comment %} <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" /> {% endcomment %}
+
+    <!-- Customized Bootstrap Stylesheet -->
+{% block links %}{% endblock links %}
+    <!-- bootstrap links -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+ <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+ <link href="{% static 'css/base_style.css' %}" rel="stylesheet">
+ 
+ <!-- animation link -->
+ <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<link href="https://unpkg.com/aos@next/dist/aos.css" rel="stylesheet" />
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+</head>
+<style>
+     
+    /* navigation hover start*/
+    #navigation-hover{
+        color:rgb(255, 255, 255)
+    }    
+    #navigation-hover:hover{
+        color:rgb(231, 251, 2)
+    }
+    #footer-link{
+        color: #c9caca;
+        transition:0.6s
+    }
+    #footer-link:hover{
+        color: #0098D7;
+        font-size: 18px;
+        transition:0.6s
+    }
+    /* navigation hover stop*/
+    #feedback-button{
+        background-color: white;
+        color: #0098D7;
+        transition: 0.5s;
+    }
+    #feedback-button:hover{
+        background-color: #0098D7;
+        color: white;
+        transition: 0.6s;
+        border-radius: 10px;
+    }
+    .more-links{
+        width:40%;
+    }
+ 
+{% block style %}{% endblock style %}
+</style>
+<body>
+    <!-- Topbar Start -->
+    <div class="container-fluid bg-light pt-3 d-none d-lg-block">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-9 text-center text-lg-left mb-2 mb-lg-0 ">
+                    <div class="d-inline-flex align-items-center">
+                        <p><i class="fa fa-envelope mr-2"></i>principal.aemschikhli@gmail.com </p>
+                        <p class="text-body px-3">|</p>
+                        <p><i class="fa fa-phone-alt mr-2"></i>9848510820, 7498785006, 7488087984</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 text-center text-lg-right">
+                    <div class="d-inline-flex align-items-center">
+                        <a class="px-3" style="color: #0098D7;" href=" ">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a class="px-3" style="color: #0098D7;" href=" ">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a class="px-3" style="color: #0098D7;" href=" ">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a class="pl-3" style="color: #0098D7;" href=" ">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        {% if request.user.is_authenticated %}
+                        <a class="pl-3" style="color: #0098D7;" href="{% url 'login' %}">
+                            Dashboard
+                        </a>
+                        {% else %}
+                        <a class="pl-3" style="color: #0098D7;" href="{% url 'admin_dashboard' %}">
+                            Login
+                        </a>
+                            
+                        {% endif %}
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Topbar End -->
+
+
+    <!-- Navbar Start -->
+    <div class="container-fluid position-relative nav-bar p-0">
+        <div class="container-lg position-relative p-0 px-lg-3" style="z-index: 9; ">
+            <nav class="navbar navbar-expand-lg navbar-light shadow-lg py-3 py-lg-0 pl-3 pl-lg-5" style="border-radius: 10px; background-color: #0098D7;">
+                <a href="{% url 'index' %}" class="navbar-brand" >
+                    <img src="{% static 'images/logo1.png' %}" alt="" height=60 width=60>
+                    <img src="{% static 'images/logo2.png' %}" alt="" height=60 width=60>
+                </a>
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-between px-3" id="navbarCollapse" >
+                    <div class="navbar-nav ml-auto py-0">
+                        <a href="{% url 'index' %}" id="navigation-hover" class=" nav-item  nav-link active ">HOME</a>
+                        <div class="nav-item dropdown">
+                            <a href="#" id="navigation-hover" class="nav-link dropdown-toggle" data-toggle="dropdown">ABOUT</a>
+                            <div class="dropdown-menu border-0 rounded-2 m-0" style="border-radius:7px ; margin-top: 50px;">
+                                <a href="{% url 'school_info' %}" class="dropdown-item">SCHOOL INFO</a>
+                                <a href="{% url 'vision_and_mission' %}" class="dropdown-item">VISION & MISSION</a>
+                                <a href="{% url 'founder_message' %}" class="dropdown-item">FOUNDER MESSAGE</a>
+                                <a href="{% url 'principal_message' %}" class="dropdown-item">PRINCIPAL MESSAGE</a>
+                                <a href="{% url 'phylosophy' %}" class="dropdown-item">OUR PHYLOSOPHY</a>
+                               <!-- <a href="{% url 'school_location' %}" class="dropdown-item">LOCATION</a>
+                                <a href="{% url 'alumni' %}" class="dropdown-item">ALUMNI</a>-->
+                                <a href="{% url 'chikhli_city' %}" class="dropdown-item">Chilkhli City</a>
+                            </div>
+                        </div>
+                        <div class="nav-item dropdown">
+                            <a href="#" id="navigation-hover" class="nav-link dropdown-toggle" data-toggle="dropdown">GENERAL INFO</a>
+                            <div class="dropdown-menu border-0 rounded-2 m-0" style="border-radius:7px ; margin-top: 50px;">
+                               <!--
+                                <a href="{% url 'teaching_staff' %}" class="dropdown-item">TEACHING STAFF</a>
+                                <a href="{% url 'school_times' %}" class="dropdown-item">SCHOOL HOURS</a>
+                                <a href="{% url 'important_days' %}" class="dropdown-item">IMPORTANT DAYS</a>
+                                <a href="{% url 'calender' %}" class="dropdown-item">CALENDAR</a>
+                                <a href="{% url 'parents_meet' %}" class="dropdown-item">PARENTS MEET</a>
+                                <a href="{% url 'parents_consent_form' %}" class="dropdown-item">PARENT CONSENT FORM</a>-->
+                                <a href="{% url 'uniform' %}" class="dropdown-item">UNIFORM</a>
+                                <a href="{% url 'rules' %}" class="dropdown-item">RULES</a>
+                            </div>
+                        </div>
+                        <div class="nav-item dropdown">
+                            <a href="#" id="navigation-hover" class="nav-link dropdown-toggle" data-toggle="dropdown">ADMISSION</a>
+                            <div class="dropdown-menu border-0 rounded-2 m-0" style="border-radius:7px ; margin-top: 50px;">
+                                <a href="{% url 'age_criteria' %}" class="dropdown-item">AGE LIMIT</a> 
+                                <a href="{% url 'documents' %}" class="dropdown-item">DOCUMENTS</a>
+                                <a href="{% url 'guidlines' %}" class="dropdown-item">GUIDLINES</a>
+                                <a href="{% url 'withdrawal' %}" class="dropdown-item">WITHDRAWAL</a>
+                            </div>
+                        </div>
+                        <div class="nav-item dropdown">
+                            <a href="#" id="navigation-hover" class="nav-link dropdown-toggle" data-toggle="dropdown">ACADEMICS</a>
+                            <div class="dropdown-menu border-0 rounded-2 m-0" style="border-radius:7px ; margin-top: 50px;">
+                                <a href="{% url 'crriculum' %}" class="dropdown-item">CURRICULUM</a>
+                                <a href="{% url 'co-crriculum' %}" class="dropdown-item">CO-CURRICULUM</a>
+                            </div>
+                        </div>
+                        <!--
+                        <div class="nav-item dropdown">
+                            <a href="#" id="navigation-hover" class="nav-link dropdown-toggle" data-toggle="dropdown">FACILITIES</a>
+                            <div class="dropdown-menu border-0 rounded-2 m-0" style="border-radius:7px ; margin-top: 50px;">
+                                <a href="{% url 'infrastructure' %}" class="dropdown-item">INFRASTRACTURE</a>
+                                <a href="{% url 'hostel' %}" class="dropdown-item">HOSTEL</a>
+                                <a href="{% url 'library' %}" class="dropdown-item">LIBRARY</a>
+                                <a href="#" class="dropdown-item">Physics Laboratory</a>
+                                <a href="#" class="dropdown-item">Chemistry Laboratory</a>
+                                <a href="#" class="dropdown-item">Biology Laboratory</a>
+                                <a href="#" class="dropdown-item">Mathematics Laboratory</a>
+                                <a href="#" class="dropdown-item">Computer Laboratory</a>
+                                <a href="{% url 'smart_classes' %}" class="dropdown-item">SMART CLASSES</a>
+                                <a href="{% url 'transportations' %}" class="dropdown-item">TRANSPORTATION</a>
+                            </div>
+                        </div>
+                        <div class="nav-item dropdown">
+                            <a href="#" id="navigation-hover" class="nav-link dropdown-toggle" data-toggle="dropdown">GALLARY</a>
+                            <div class="dropdown-menu border-0 rounded-2 m-0" style="border-radius:7px ; margin-top: 50px;">
+                                <a href="{% url 'photos' %}" class="dropdown-item">PHOTOS</a>
+                                <a href="{% url 'videos' %}" class="dropdown-item">VIDEOS</a>
+                            </div>
+                        </div>-->
+                        <a href="{% url "career" %}" id="navigation-hover" class="nav-item nav-link ">Career </a>
+                        <a href="{% url "contact_us" %}" id="navigation-hover" class="nav-item nav-link"  >Contact us</a>
+                        
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <!-- Navbar End -->
+
+
+
+
+ <!--More model start -->
+ <div class="modal fade" id="more" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header" style="background-color: #0098D7;">
+          <h4 class="modal-title text-light" id="exampleModalLongTitle">Important links</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body text-left">
+            <div class="row">
+                <div class="col-sm-12 " style="padding:30px;">  
+                    <center>
+                        <a href="{% url 'enquiry_form' %}" class="btn btn-info" style="border-radius:6px; width:9rem"><i class="bi bi-person-lines-fill"></i> Contact us</a>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <a href="{% url 'career_form' %}" class="btn btn-info" style="border-radius:6px; width:9rem"><i class="bi bi-bookmarks-fill"></i> Career</a>
+                        <br>
+                        <br>
+                        <a href="{% url 'alumni_form' %}" class="btn btn-info" style="border-radius:6px; width:20rem"><i class="bi bi-bookmarks-fill"></i>Old Students Alumni Registration</a>
+                        <br>
+                    </center>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+          <button  type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+ <!--more Modal Stop -->
+  
+
+
+{% block body_content %}{% endblock body_content %}
+
+
+
+
+
+
+
+
+    <!-- Footer Start -->
+    <div class="container-fluid bg-dark text-white-50 py-0 px-sm-3 px-lg-5" style="margin-top: 90px;">
+        <div class="row pt-5">
+            <div class="col-lg-3 col-md-6 mb-5">
+                <a href="" class="navbar-brand">
+                    <img src="{% static 'images/logo1.png' %}" alt="" height=80 width=80>
+                    <img src="{% static 'images/logo2.png' %}" alt="" height=80 width=90>
+
+                </a>
+                <p>Knowledge is Power</p>
+                <h6 class="text-white text-uppercase mt-4 mb-3" style="letter-spacing: 5px;">Follow Us</h6>
+                <div class="d-flex justify-content-start">
+                    <a class="btn btn-outline-secondary btn-square mr-2" href="https://twitter.com/home" style="background-color: #0098D7;"><i class="fab fa-twitter"></i></a>
+                    <a class="btn btn-outline-secondary btn-square mr-2" href=" " style="background-color: #0098D7;"><i class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-outline-secondary btn-square mr-2" href=" " style="background-color: #0098D7;"><i class="fab fa-youtube"></i></a>
+                    <a class="btn btn-outline-secondary btn-square mr-2" href=" " style="background-color: #0098D7;"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-5">
+               <!-- <h5 class="text-white text-uppercase mb-4" style="letter-spacing: 5px;">FACILITIES</h5>
+                <div class="d-flex flex-column justify-content-start">
+                    <a class="mb-2" id="footer-link" href="{% url 'hostel' %}"><i class="fa fa-angle-right mr-2"></i>Hostel</a>
+                    <a class="mb-2" id="footer-link" href="{% url 'library' %}"><i class="fa fa-angle-right mr-2"></i>Libraries</a>
+                    <a class="mb-2" id="footer-link" href="{% url 'computer_lab' %}"><i class="fa fa-angle-right mr-2"></i>Practical Labs</a>
+                    <a class="mb-2" id="footer-link" href="{% url 'transportations' %}"><i class="fa fa-angle-right mr-2"></i>Transportation</a>
+                    <a class="mb-2" id="footer-link" href="{% url 'infrastructure' %}"><i class="fa fa-angle-right mr-2"></i>Infrastructure</a>
+                </div>--> 
+                <h5 class="text-white text-uppercase mb-0" style="letter-spacing: 5px;">Usefull Links</h5>
+                <div class="d-flex flex-column justify-content-start">
+                    <a class="mb-2" id="footer-link" href="{% url "founder_message" %}"><i class="fa fa-angle-right mr-2"></i>Founder Message</a>
+                    <a class="mb-2" id="footer-link" href="{% url 'principal_message' %}"><i class="fa fa-angle-right mr-2"></i>Principal Message</a>
+                    <a class="mb-2" id="footer-link" href="{% url 'vision_and_mission' %}"><i class="fa fa-angle-right mr-2"></i>Vision & Mission</a>
+                    <a class="mb-2" id="footer-link" href="{% url "career" %}"><i class="fa fa-angle-right mr-2"></i>Career</a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-5">
+                <h5 class="text-white text-uppercase mb-4" style="letter-spacing: 5px;">Contact Us</h5>
+                <p><i class="fa fa-map-marker-alt mr-2"></i>Shakegaon Road, Campus of Anuradha Group of Institutes, Chikhli, Buldana 443201</p>
+                <p><i class="fa fa-phone-alt mr-2"></i>9848510820, 7498785006, 7488087984</p>
+                <p><i class="fa fa-envelope mr-2"></i>principal.aemschikhli@gmail.com </p>
+                <h6 class="text-white text-uppercase mt-4 mb-3" style="letter-spacing: 5px;">Important Links</h6>
+                <div class="w-100">
+                    <a href="#" class="btn " id="feedback-button" data-toggle="modal" data-target="#more">Important Links</a>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 mb-5 ">
+                <iframe src=" " width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+	<!-- Modal -->
+	<div class="modal fade" id="enquiry_model" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+			<h5 class="modal-title" id="exampleModalLongTitle">Enquiry Form</h5>
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+				<span aria-hidden="true">&times;</span>
+			</button>
+			</div>
+			<div class="modal-body">
+				<form action="" method="post">{% csrf_token %}
+                    {{name}}
+					{% comment %} {{fm.full_name|as_crispy_field}} {% endcomment %}
+					<center><input type="submit" value="Submit" class="btn btn-success" style="width:100%"></center>
+				</form>
+			</div>
+			<div class="modal-footer">
+			<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+		</div>
+		</div>
+		</div>
+	</div>
+
+  
+  
+    <div class="container-fluid bg-dark text-white border-top py-4 px-sm-3 px-md-5" style="border-color: rgba(256, 256, 256, .1) !important;">
+        <div class="row">
+            <div class="col-lg-6 text-center text-md-left mb-3 mb-md-0">
+                <p class="m-0 text-white-50">Copyright &copy; <a href="#">AEMS</a>. All Rights Reserved.</a>
+                </p>
+            </div>
+            <div class="col-lg-6 text-center text-md-right">
+                <p class="m-0 text-white-50">Designed by <a href="https://snyamtech.com" style="color:#0098D7">SnyamTech Software</a>
+                </p>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top" ><i class="fa fa-angle-double-up"></i></a>
+
+    {% block script_links %}{% endblock script_links %}
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Template Javascript -->
+    <script src="{% static 'js/main.js' %}"></script>
+
+     <!-- scrolling animation    -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init(); {
+            duration: 2000;
+        }
+    </script>
+
+
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script>
+        {% for msg in messages %}
+            {% if msg.tags == 'success' %}
+            swal({
+              title: "Good job!",
+              text: "{{msg}}",
+              icon: "success",
+              button: "OK",
+            });
+    
+            {% elif msg.tags == 'error' %}
+            swal({
+              title: "Error",
+              text: "{{msg}}",
+              icon: "error",
+              button: "OK",
+            });
+             
+            {% elif msg.tags == 'warning' %}
+            swal({
+              title: "Warning",
+              text: "{{msg}}",
+              icon: "warning",
+              button: "OK",
+            });
+             
+            {% elif msg.tags == 'info' %}
+            swal({
+              title: "Oops",
+              text: "{{msg}}",
+              icon: "info",
+              button: "OK",
+            });
+             
+            {% endif %}
+        {% endfor %}
+    </script>
+</body>
+
+</html>

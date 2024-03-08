@@ -1,0 +1,150 @@
+{% extends "base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block body_content %}
+<style>
+    
+    /*--------------------------------------------------------------
+    # Hero Section
+    --------------------------------------------------------------*/
+    #hero {
+      width: 100%;
+      height: 80vh;
+      background: url("{% static 'images/career-hero.jpg' %}") center center;
+      background-size: cover;
+      position: relative;
+    }
+    
+    #hero .container {
+      padding-top: 80px;
+    }
+    
+    #hero:before {
+      content: "";
+      background: rgba(0, 0, 0, 0.6);
+      position: absolute;
+      bottom: 0;
+      top: 0;
+      left: 0;
+      right: 0;
+    }
+    
+    #hero h1 {
+      margin: 0 0 10px 0;
+      font-size: 48px;
+      font-weight: 700;
+      line-height: 56px;
+      color: #fff;
+    }
+    
+    #hero h2 {
+      color: #eee;
+      margin-bottom: 40px;
+      font-size: 15px;
+      font-weight: 500;
+      font-family: "Open Sans", sans-serif;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+    
+    #hero .btn-get-started {
+      font-family: "Poppins", sans-serif;
+      text-transform: uppercase;
+      font-weight: 500;
+      font-size: 14px;
+      letter-spacing: 1px;
+      display: inline-block;
+      padding: 8px 28px;
+      border-radius: 50px;
+      transition: 0.5s;
+      margin: 10px;
+      border: 2px solid #fff;
+      color: #fff;
+    }
+    
+    #hero .btn-get-started:hover {
+      background: #009970;
+      border: 2px solid #009970;
+    }
+    
+    @media (min-width: 1024px) {
+      #hero {
+        background-attachment: fixed;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      #hero {
+        height: 100vh;
+      }
+    
+      #hero .container {
+        padding-top: 60px;
+      }
+    
+      #hero h1 {
+        font-size: 32px;
+        line-height: 36px;
+      }
+    }
+     
+    button[type=submit] {
+      background: linear-gradient(180deg, rgba(30,41,91,1) 0%, rgba(16,135,159,1) 100%);
+      border: 0;
+      padding: 14px 45px;
+      color: #fff;
+      transition: 0.4s;
+      border-radius: 50px;
+    }
+    
+    button[type=submit]:hover {
+      background: linear-gradient(90deg, rgba(30,41,91,1) 0%, rgba(16,135,159,1) 100%);
+      cursor:pointer;
+    }
+     
+ 
+        </style>
+
+          <!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex align-items-center mb-3">
+    <div class="container text-center position-relative" >
+      <h1>Apply for a Job</h1>
+      <a href="#form"><img src="{% static 'images/scroll-icon.gif' %}"  alt="snyamtech" style="width:90px;"></a>
+    </div>
+  </section><!-- End Hero -->
+
+<br>
+    <!-- ======= Contact Section ======= --> 
+        <div class="container" id="form" data-aos="fade-up"> 
+          <h1 class="mb-4">Apply for a Job</h1>
+              <div class="col-sm-12 ">
+              <form method="POST" action="{% url "career_form" %}" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="row">
+                  <div class="col-sm-12   mb-3">
+                    {{ fm.full_name|as_crispy_field }}
+                  </div>
+                  <div class="col-sm-12   mb-3">
+                    {{ fm.email|as_crispy_field }}
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-12   mb-3">
+                    {{ fm.mobile|as_crispy_field }}
+                  </div>
+                  <div class="col-sm-12  mb-3">
+                    {{ fm.resume|as_crispy_field }}
+                  </div>
+                </div>
+                 
+                <div class="text-center">
+                  <button type="submit">Send Message</button>
+                </div>
+              </form>
+            </div><!-- End Contact Form -->
+             
+        </div>
+      </section><!-- End Contact Section -->
+  <br>
+ 
+{% endblock body_content %}
